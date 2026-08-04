@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 .DS_Store
+CLAUDE_API_KEY.txt
+.claude/
