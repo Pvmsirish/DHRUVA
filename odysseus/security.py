@@ -44,12 +44,14 @@ class Policy:
 
     def check(self, call: dict[str, Any]) -> str | None:
         """Return None to allow, or a reason string to block."""
-        # Deny-pattern bash commands are always blocked.
+        # Deny-pattern bash commands are always blocked, even in yolo mode.
         if call["name"] == "bash":
             cmd = call["args"].get("command", "")
             for pat in DENY_PATTERNS:
                 if re.search(pat, cmd):
-                    return f"blocked by deny pattern"
+                    # Name the pattern so a blocked agent (and its user)
+                    # can see exactly which rule fired.
+                    return f"command matches deny pattern {pat!r}"
 
         # Read tools and yolo mode always pass.
         if call["name"] in READ_TOOLS or self.mode == "yolo":

@@ -19,16 +19,23 @@ from typing import Any, Callable
 from odysseus import provider
 
 
-def run_loop(
-    model: str,
-    system: str,
-    messages: list[dict[str, Any]],
-    tools: dict[str, Any],
-    on_event: Callable[[str, dict[str, Any]], None],
-    before_tool: Callable[[dict[str, Any]], str | None],
-    max_turns: int = 80,
-    before_turn: Callable[[list[dict[str, Any]]], list[dict[str, Any]]] | None = None,
-) -> str:
+def _ask(model: str, system: str, messages: list, specs: list,
+         on_event: Callable) -> dict[str, Any]:
+    """Call the model, append its reply as an assistant message, emit event."""
+    reply = provider.complete(model, system, messages, specs)
+    msg = {"role": "assistant", "text": reply["text"],
+           "tool_calls": reply["tool_calls"]}
+    messages.append(msg)
+    on_event("assistant", {**reply, "message": msg})
+    return reply
+
+
+def run_loop(model: str, system: str, messages: list[dict[str, Any]],
+             tools: dict[str, Any],
+             on_event: Callable[[str, dict[str, Any]], None],
+             before_tool: Callable[[dict[str, Any]], str | None],
+             max_turns: int = 80,
+             before_turn: Callable[[list], list] | None = None) -> str:
     """Drive the think → act → observe loop and return the final text.
 
     *tools* maps names to objects exposing *.spec* (a ``{"schema": …}`` dict)
@@ -40,17 +47,7 @@ def run_loop(
     for _ in range(max_turns):
         if before_turn is not None:
             messages = before_turn(messages)
-
-        reply = provider.complete(model, system, messages, specs)
-
-        assistant_msg: dict[str, Any] = {
-            "role": "assistant",
-            "text": reply["text"],
-            "tool_calls": reply["tool_calls"],
-        }
-        messages.append(assistant_msg)
-        on_event("assistant", {**reply, "message": assistant_msg})
-
+        reply = _ask(model, system, messages, specs, on_event)
         if not reply["tool_calls"]:
             return reply["text"]
 
@@ -68,18 +65,11 @@ def run_loop(
                     result = f"ERROR: {type(exc).__name__}: {exc}"
             # call_id round-trips the provider's tool-call id.
             messages.append({"role": "tool", "name": call["name"],
-                             "text": result,
-                             "call_id": call.get("signature")})
+                             "text": result, "call_id": call.get("signature")})
             on_event("tool_end", {"name": call["name"], "result": result})
 
-    # Turn budget exhausted — ask the model to wrap up without tools.
+    # Turn budget exhausted — one final call with no tools offered.
     messages.append({"role": "user", "text": "Turn limit reached; wrap up now."})
     if before_turn is not None:
         messages = before_turn(messages)
-    reply = provider.complete(model, system, messages, tools=[])
-    final: dict[str, Any] = {
-        "role": "assistant", "text": reply["text"], "tool_calls": [],
-    }
-    messages.append(final)
-    on_event("assistant", {**reply, "message": final})
-    return reply["text"]
+    return _ask(model, system, messages, [], on_event)["text"]

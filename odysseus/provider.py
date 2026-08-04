@@ -64,12 +64,14 @@ def _to_wire(messages: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if role == "user":
             _merge(wire, "user", [{"type": "text", "text": msg["text"]}])
         elif role == "assistant":
+            # The stored signature is the Anthropic tool_use id — it must
+            # round-trip verbatim so results can be matched to calls.
             parts: list[dict[str, Any]] = []
             if msg.get("text"):
                 parts.append({"type": "text", "text": msg["text"]})
-            for tc in msg.get("tool_calls", []):
-                parts.append({"type": "tool_use", "id": tc.get("signature", ""),
-                               "name": tc["name"], "input": tc["args"]})
+            parts += [{"type": "tool_use", "id": tc.get("signature", ""),
+                       "name": tc["name"], "input": tc["args"]}
+                      for tc in msg.get("tool_calls", [])]
             _merge(wire, "assistant", parts)
         elif role == "tool":
             # Tool results ride in a user message; tool_use_id round-trips
@@ -100,6 +102,12 @@ def _parse_response(body: dict[str, Any]) -> dict[str, Any]:
         elif block["type"] == "tool_use":
             tool_calls.append({"name": block["name"], "args": block["input"],
                                 "signature": block["id"]})
+    # Policy refusals arrive with empty content and stop_reason "refusal" —
+    # surface them as text so the loop never returns silently empty.
+    if not texts and not tool_calls and body.get("stop_reason") == "refusal":
+        detail = body.get("stop_details", {}).get("explanation",
+                                                   "no reason given")
+        texts.append(f"[Request refused by the provider: {detail}]")
     usage = body.get("usage", {})
     return {"text": "".join(texts), "tool_calls": tool_calls,
             "usage": {"input": usage.get("input_tokens", 0),
@@ -156,9 +164,10 @@ def complete(model: str, system: str, messages: list[dict[str, Any]],
     if slug not in ("claude-fable-5",):
         payload["temperature"] = 0.4
     if tools:
+        specs = [t["schema"] for t in tools]
         payload["tools"] = [
             {"name": s["name"], "description": s.get("description", ""),
-             "input_schema": s.get("parameters", s.get("input_schema", {}))}
-            for t in tools for s in [t["schema"]]
+             "input_schema": s.get("parameters", {})}
+            for s in specs
         ]
     return _parse_response(_post(API_ROOT, payload, hdrs))
