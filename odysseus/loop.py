@@ -66,8 +66,10 @@ def run_loop(
                     result = str(tools[call["name"]].run(**call["args"]))
                 except Exception as exc:
                     result = f"ERROR: {type(exc).__name__}: {exc}"
+            # call_id round-trips the provider's tool-call id.
             messages.append({"role": "tool", "name": call["name"],
-                             "text": result})
+                             "text": result,
+                             "call_id": call.get("signature")})
             on_event("tool_end", {"name": call["name"], "result": result})
 
     # Turn budget exhausted — ask the model to wrap up without tools.
