@@ -1,14 +1,14 @@
-"""Day 3 — Skills.
+"""Day 3/4 — Skills: on-demand instruction packs.
 
-Concept: a skill is a markdown file, not code.  Dropping a SKILL.md into
-skills/<name>/ under the working directory changes agent behavior with zero
-code changes — the harness folds every skill into the system prompt at
-session start.
+Concept: a skill is a markdown file, not code.  The system prompt carries
+only a one-line catalog; the agent loads a skill's full text through the
+use_skill tool when the task calls for it.  Progressive disclosure keeps
+the prompt small.
 
 Design rules
  • Skills are data — discovered on disk, never imported or executed.
- • One folder per skill; the folder name is the skill name.
- • render() produces a single block the caller appends to the system prompt.
+ • catalog() reads only the front-matter description, never the body.
+ • A read_skill() miss lists what IS available — errors should teach.
 """
 
 from __future__ import annotations
@@ -18,27 +18,36 @@ from pathlib import Path
 SKILLS_DIR = "skills"
 
 
-def discover(workdir: str | Path) -> list[tuple[str, str]]:
-    """Return (name, text) for every skills/<name>/SKILL.md under *workdir*.
-
-    Sorted by folder name so the system prompt is deterministic.
-    """
+def catalog(workdir: str | Path) -> dict[str, dict[str, str]]:
+    """Map skill name → {description, path} from skills/<name>/SKILL.md."""
     root = Path(workdir) / SKILLS_DIR
-    if not root.is_dir():
-        return []
-    return [(md.parent.name, md.read_text(encoding="utf-8"))
-            for md in sorted(root.glob("*/SKILL.md"))]
+    found: dict[str, dict[str, str]] = {}
+    for md in sorted(root.glob("*/SKILL.md")) if root.is_dir() else []:
+        desc = "(no description)"
+        # Permissive front-matter scan: first "description:" line wins.
+        for line in md.read_text(encoding="utf-8").splitlines():
+            if line.lower().startswith("description:"):
+                desc = line.split(":", 1)[1].strip()
+                break
+        found[md.parent.name] = {"description": desc, "path": str(md)}
+    return found
 
 
-def render(workdir: str | Path) -> str:
-    """Render all discovered skills as one system-prompt block.
-
-    Returns an empty string when no skills exist, so callers can append
-    unconditionally.
-    """
-    skills = discover(workdir)
-    if not skills:
+def catalog_prompt(workdir: str | Path) -> str:
+    """One catalog line per skill for the system prompt; empty when none."""
+    cat = catalog(workdir)
+    if not cat:
         return ""
-    blocks = [f"## Skill: {name}\n{text.strip()}" for name, text in skills]
-    return ("\n\nYou have the following skills. Follow their instructions "
-            "in everything you produce.\n\n" + "\n\n".join(blocks))
+    return ("Skills available (load one with the use_skill tool when "
+            "relevant):\n"
+            + "\n".join(f"- {name}: {info['description']}"
+                        for name, info in cat.items()))
+
+
+def read_skill(workdir: str | Path, name: str) -> str:
+    """Return a skill's full SKILL.md text, or a corrective error."""
+    cat = catalog(workdir)
+    if name not in cat:
+        return (f"ERROR: no skill named {name}. "
+                f"Available: {', '.join(cat) or '(none)'}")
+    return Path(cat[name]["path"]).read_text(encoding="utf-8")

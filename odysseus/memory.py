@@ -1,51 +1,51 @@
-"""Day 3 — Durable memory.
+"""Day 3/4 — Durable memory and the base system prompt.
 
-Concept: memory is a file, not a database.  Facts worth keeping across
-conversations live in MEMORY.md inside the working directory; each new
-session folds the file into the system prompt, so recall costs no tool
-calls.
+Concept: memory is a plain file the user can read and edit — DHRUVA.md in
+the working directory.  The system prompt is rebuilt each session and folds
+the file in, so recall costs no tool calls.
 
 Design rules
  • remember() appends — history is never silently rewritten.
- • recall() returns raw markdown; the caller decides where it goes.
- • The memory tool is a thin closure over remember(), so agents can save
-   facts mid-conversation.
+ • MEMORY_FILE is the single name; prompts and returns quote the constant.
+ • build_system_prompt() is the one place the system prompt is assembled.
 """
 
 from __future__ import annotations
 
+import platform
 from pathlib import Path
 
-from odysseus.tools import Tool, tool
+MEMORY_FILE = "DHRUVA.md"
 
-MEMORY_FILE = "MEMORY.md"
+BASE_PROMPT = (
+    "You are Odysseus, a small sharp coding agent working inside one "
+    "directory with the tools provided. Act, don't narrate. Inspect before "
+    "assuming. Prefer edit_file for small changes. Verify after building by "
+    "running or re-reading. Never repeat a failing call unchanged. When "
+    "complete, reply with a short summary and stop calling tools."
+)
 
 
-def memory_path(workdir: str | Path) -> Path:
-    """Return the path of the memory file inside *workdir*."""
-    return Path(workdir) / MEMORY_FILE
+def build_system_prompt(workdir: str | Path, extra: str = "") -> str:
+    """Assemble the system prompt: base, environment, project memory, extra.
+
+    Sections are joined by blank lines; absent sections are simply omitted.
+    """
+    parts = [BASE_PROMPT,
+             f"Platform: {platform.system()}. "
+             f"Working directory: {Path(workdir).resolve()}"]
+    mem = Path(workdir) / MEMORY_FILE
+    if mem.exists():
+        parts.append(f"Project memory ({MEMORY_FILE}):\n"
+                     + mem.read_text(encoding="utf-8"))
+    if extra:
+        parts.append(extra)
+    return "\n\n".join(parts)
 
 
-def remember(workdir: str | Path, fact: str) -> str:
-    """Append *fact* as one bullet to the memory file, creating it if needed."""
-    path = memory_path(workdir)
-    header = "" if path.exists() else "# Memory\n\n"
+def remember(workdir: str | Path, note: str) -> str:
+    """Append *note* as one bullet line to the memory file."""
+    path = Path(workdir) / MEMORY_FILE
     with path.open("a", encoding="utf-8") as fh:
-        fh.write(f"{header}- {fact.strip()}\n")
-    return f"Remembered: {fact.strip()}"
-
-
-def recall(workdir: str | Path) -> str:
-    """Return the memory file contents, or an empty string when absent."""
-    path = memory_path(workdir)
-    return path.read_text(encoding="utf-8") if path.exists() else ""
-
-
-def memory_tool(workdir: str | Path) -> Tool:
-    """Build a tool that lets the agent persist facts for future sessions."""
-    @tool("Save a fact to durable memory so future conversations know it",
-          fact="The fact to remember, one short sentence")
-    def remember_fact(fact: str) -> str:
-        """Closure over remember() bound to this working directory."""
-        return remember(workdir, fact)
-    return remember_fact
+        fh.write(f"- {note}\n")
+    return f"Remembered in {MEMORY_FILE}"
