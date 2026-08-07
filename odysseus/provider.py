@@ -28,7 +28,8 @@ DEFAULT_MODEL = "Fable 5"
 _KEY_FILE = Path(r"C:\HarnessEnginerring\DHRUVA\CLAUDE_API_KEY.txt")
 
 # Friendly name → Anthropic model-id.
-_MODEL_IDS: dict[str, str] = {"Fable 5": "claude-fable-5"}
+_MODEL_IDS: dict[str, str] = {"Fable 5": "claude-fable-5",
+                              "Opus 5": "claude-opus-5"}
 
 
 def api_key() -> str:
@@ -160,8 +161,8 @@ def complete(model: str, system: str, messages: list[dict[str, Any]],
         "model": slug, "max_tokens": 65536,
         "system": system, "messages": _to_wire(messages),
     }
-    # Thinking models (Fable 5) reject explicit temperature.
-    if slug not in ("claude-fable-5",):
+    # Claude 5 thinking models reject explicit temperature.
+    if slug not in ("claude-fable-5", "claude-opus-5", "claude-sonnet-5"):
         payload["temperature"] = 0.4
     if tools:
         specs = [t["schema"] for t in tools]
