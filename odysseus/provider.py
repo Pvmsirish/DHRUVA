@@ -29,7 +29,8 @@ _KEY_FILE = Path(r"C:\HarnessEnginerring\DHRUVA\CLAUDE_API_KEY.txt")
 
 # Friendly name → Anthropic model-id.
 _MODEL_IDS: dict[str, str] = {"Fable 5": "claude-fable-5",
-                              "Opus 5": "claude-opus-5"}
+                              "Opus 5": "claude-opus-5",
+                              "Sonnet 5": "claude-sonnet-5"}
 
 
 def api_key() -> str:
