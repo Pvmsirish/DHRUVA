@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Latitude 15° — Specialty Coffee Roasters, Assagao, Goa</title>
+<meta name="description" content="Latitude 15° is a small-batch specialty coffee roastery in Assagao, North Goa: six single-origin Indian lots with honest roast dates, monthly and annual subscriptions, and step-by-step V60, AeroPress, filter and cold-brew guides." />
+<meta name="theme-color" content="#c2562f" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Latitude 15° — Specialty Coffee Roasters, Assagao, Goa" />
+<meta property="og:description" content="Small-batch single-origin coffee roasted twice a week in Assagao, North Goa. Shop six current lots, subscribe, or learn to brew them properly." />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='22' fill='%23fdf6f0'/%3E%3Cg fill='none' stroke='%2333211a' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='24' cy='24' r='17'/%3E%3Cpath d='M24 8c-6 5-6 27 0 32M24 8c6 5 6 27 0 32M8.5 18h31M8.5 30h31'/%3E%3C/g%3E%3Ccircle cx='24' cy='24' r='3.2' fill='%23c2562f'/%3E%3C/svg%3E" />
+<style>
+/* ============================================================
+   LATITUDE 15° — DESIGN SYSTEM
+   ============================================================ */
+:root{
+  /* --- palette: raw ingredients --- */
+  --clay-50:#fdf6f0;  --clay-100:#f8e7d9;  --clay-200:#eecdb4;
+  --clay-400:#d1875a;  --clay-500:#c2562f;  --clay-600:#a3421f;
+  --sea-100:#d8eee8;   --sea-500:#1f7a6b;   --sea-600:#155a4f;
+  --gold-300:#f0d08a;  --gold-500:#d8a23a;
+  --bean-700:#4a3225;  --bean-800:#33211a;  --bean-900:#1e1310;
+  --ash-50:#faf7f4;    --ash-100:#f1ebe4;   --ash-300:#d8ccc0;
+  --ash-500:#8b7c6e;
+
+  /* --- semantic tokens --- */
+  --paper:var(--clay-50);
+  --paper-2:#fffdfa;
+  --surface:#ffffff;
+  --surface-2:var(--ash-100);
+  --ink:var(--bean-900);
+  --ink-2:#5d4a3e;
+  --ink-3:#6b5a4c;
+  --line:rgba(74,50,37,.16);
+  --line-strong:rgba(74,50,37,.34);
+  --brand:var(--clay-500);
+  --brand-ink:var(--clay-600);
+  --brand-wash:var(--clay-100);
+  --accent:var(--sea-600);
+  --accent-wash:var(--sea-100);
+  --gold:var(--gold-500);
+  --sketch:var(--bean-800);
+  --focus:var(--sea-500);
+
+  /* --- type --- */
+  --font-display:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+  --font-text:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  --font-mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --step--1:clamp(.78rem,.76rem + .1vw,.85rem);
+  --step-0:clamp(.98rem,.94rem + .2vw,1.06rem);
+  --step-1:clamp(1.13rem,1.06rem + .35vw,1.32rem);
+  --step-2:clamp(1.36rem,1.2rem + .8vw,1.85rem);
+  --step-3:clamp(1.7rem,1.4rem + 1.5vw,2.6rem);
+  --step-4:clamp(2.1rem,1.5rem + 3vw,3.9rem);
+  --step-5:clamp(2.6rem,1.5rem + 5vw,5.4rem);
+
+  /* --- space / shape / motion --- */
+  --s-1:.25rem; --s-2:.5rem; --s-3:.75rem; --s-4:1rem; --s-5:1.5rem;
+  --s-6:2rem; --s-7:3rem; --s-8:4rem; --s-9:6rem; --s-10:8rem;
+  --r-sm:6px; --r-md:12px; --r-lg:20px; --r-xl:30px; --r-pill:999px;
+  --shadow-1:0 1px 2px rgba(48,30,20,.06),0 2px 8px rgba(48,30,20,.05);
+  --shadow-2:0 2px 6px rgba(48,30,20,.07),0 14px 34px -12px rgba(48,30,20,.22);
+  --shadow-3:0 30px 70px -30px rgba(48,30,20,.45);
+  --ease:cubic-bezier(.22,.8,.28,1);
+  --dur:.32s;
+  --wrap:1180px;
+}
+[data-theme="dark"]{
+  --paper:#14100e;
+  --paper-2:#191412;
+  --surface:#1f1917;
+  --surface-2:#261f1c;
+  --ink:#f6ece3;
+  --ink-2:#cbb8a9;
+  --ink-3:#9a8677;
+  --line:rgba(246,236,227,.14);
+  --line-strong:rgba(246,236,227,.3);
+  --brand:#e8815a;
+  --brand-ink:#f0a183;
+  --brand-wash:#3a231a;
+  --accent:#5ec3ad;
+  --accent-wash:#16332e;
+  --gold:#e8bd63;
+  --sketch:#f0e2d6;
+  --focus:#5ec3ad;
+  --shadow-1:0 1px 2px rgba(0,0,0,.5);
+  --shadow-2:0 2px 6px rgba(0,0,0,.4),0 16px 40px -14px rgba(0,0,0,.7);
+  --shadow-3:0 30px 70px -30px rgba(0,0,0,.9);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:88px}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-text);font-size:var(--step-0);line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  transition:background var(--dur) var(--ease),color var(--dur) var(--ease);
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.08;margin:0;letter-spacing:-.015em}
+h1{font-size:var(--step-5)}
+h2{font-size:var(--step-4)}
+h3{font-size:var(--step-2)}
+h4{font-size:var(--step-1)}
+p{margin:0 0 var(--s-4)}
+a{color:inherit;text-decoration-color:var(--line-strong);text-underline-offset:3px}
+img,svg{display:block;max-width:100%}
+ul,ol{margin:0 0 var(--s-4);padding-left:1.15em}
+li{margin-bottom:.35em}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+::selection{background:var(--brand);color:#fff}
+.wrap{width:min(100% - 2.5rem,var(--wrap));margin-inline:auto}
+.section{padding-block:var(--s-9);position:relative}
+.eyebrow{
+  font-family:var(--font-mono);font-size:var(--step--1);letter-spacing:.22em;
+  text-transform:uppercase;color:var(--brand-ink);margin:0 0 var(--s-3);
+  display:flex;align-items:center;gap:.6rem;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:currentColor;border-radius:2px}
+.lede{font-size:var(--step-1);color:var(--ink-2);max-width:60ch}
+.muted{color:var(--ink-3)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.skip-link{
+  position:fixed;top:-60px;left:var(--s-4);z-index:100;
+  background:var(--brand);color:#fff;padding:.85rem 1.4rem;border-radius:var(--r-md);
+  font-weight:600;text-decoration:none;transition:top .2s var(--ease);box-shadow:var(--shadow-2);
+}
+.skip-link:focus{top:var(--s-4);width:auto;height:auto;clip:auto;overflow:visible;margin:0}
+
+/* hand-drawn ink treatment for the SVGs */
+.ink{stroke:var(--sketch);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ink-thin{stroke:var(--sketch);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.rough{filter:url(#roughen)}
+.fill-brand{fill:var(--brand);opacity:.85}
+.fill-wash{fill:var(--brand-wash)}
+.fill-accent{fill:var(--accent);opacity:.8}
+.fill-gold{fill:var(--gold);opacity:.85}
+.fill-paper{fill:var(--paper-2)}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.82rem 1.5rem;border-radius:var(--r-pill);border:1.5px solid transparent;
+  font-weight:600;font-size:var(--step-0);letter-spacing:.01em;cursor:pointer;
+  text-decoration:none;transition:transform .18s var(--ease),background .2s,box-shadow .2s,border-color .2s,color .2s;
+  will-change:transform;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn--primary{background:var(--brand);color:#fff;box-shadow:var(--shadow-2)}
+.btn--primary:hover{background:var(--brand-ink)}
+.btn--ghost{border-color:var(--line-strong);background:transparent;color:var(--ink)}
+.btn--ghost:hover{border-color:var(--brand);color:var(--brand-ink);background:var(--brand-wash)}
+.btn--sm{padding:.68rem 1.1rem;min-height:44px;font-size:var(--step--1)}
+.btn--added{background:var(--accent-wash);border-color:var(--accent);color:var(--accent)}
+.btn--block{width:100%}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:color-mix(in srgb,var(--paper) 82%,transparent);
+  backdrop-filter:blur(14px) saturate(1.3);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s,background .3s,box-shadow .3s;
+}
+.nav.is-stuck{border-bottom-color:var(--line);box-shadow:0 6px 20px -18px rgba(0,0,0,.6)}
+.nav__inner{display:flex;align-items:center;gap:var(--s-5);min-height:72px}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--font-display);font-size:1.12rem;font-weight:600;letter-spacing:-.01em;flex-shrink:0}
+.brand__mark{width:38px;height:38px;flex:0 0 38px}
+.brand small{display:block;font-family:var(--font-mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);font-weight:400}
+.nav__links{display:flex;align-items:center;gap:var(--s-1);margin-left:auto;list-style:none;padding:0}
+.nav__links a{
+  display:block;padding:.45rem .7rem;border-radius:var(--r-pill);
+  font-size:.92rem;text-decoration:none;color:var(--ink-2);transition:color .2s,background .2s;
+}
+.nav__links a:hover{color:var(--ink);background:var(--surface-2)}
+.nav__links a[aria-current="true"]{color:var(--brand-ink);background:var(--brand-wash);font-weight:600}
+.nav__tools{display:flex;align-items:center;gap:var(--s-2);margin-left:var(--s-3)}
+.icon-btn{
+  width:42px;height:42px;display:grid;place-items:center;border-radius:var(--r-pill);
+  border:1.5px solid var(--line);background:var(--surface);cursor:pointer;
+  transition:border-color .2s,background .2s,transform .2s var(--ease);
+}
+.icon-btn:hover{border-color:var(--brand);transform:rotate(-12deg)}
+.icon-btn svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.icon-btn{position:relative}
+.cart-count{
+  position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 4px;border-radius:var(--r-pill);
+  background:var(--brand);color:#fff;font-family:var(--font-mono);font-size:.62rem;line-height:18px;text-align:center;
+  transform:scale(0);transition:transform .28s var(--ease);font-weight:700;
+}
+.cart-count.is-visible{transform:scale(1)}
+[data-theme="light"] .icon-moon{display:block}
+[data-theme="light"] .icon-sun{display:none}
+[data-theme="dark"] .icon-moon{display:none}
+[data-theme="dark"] .icon-sun{display:block}
+.nav__burger{display:none}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;padding-block:var(--s-8) var(--s-9);overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:-30% -20% auto -20%;height:120%;z-index:0;
+  background:
+    radial-gradient(58% 46% at 78% 22%,color-mix(in srgb,var(--brand) 22%,transparent),transparent 70%),
+    radial-gradient(46% 40% at 12% 78%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 70%);
+  pointer-events:none;
+}
+.hero__grid{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;gap:var(--s-7);align-items:center}
+.hero h1{margin-bottom:var(--s-4)}
+.hero h1 em{font-style:italic;color:var(--brand);position:relative;white-space:nowrap}
+.hero h1 em svg{position:absolute;left:0;bottom:-.18em;width:100%;height:.28em;overflow:visible}
+.hero__meta{display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-5);margin:var(--s-5) 0 var(--s-6);font-family:var(--font-mono);font-size:var(--step--1);color:var(--ink-3);letter-spacing:.04em}
+.hero__meta span{display:flex;align-items:center;gap:.4rem}
+.hero__meta span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:var(--s-3)}
+.hero__art{position:relative;padding:22px}
+.hero__art svg{width:100%;height:auto;filter:drop-shadow(0 34px 40px rgba(60,36,24,.18))}
+[data-theme="dark"] .hero__art svg{filter:drop-shadow(0 34px 40px rgba(0,0,0,.6))}
+.hero__tag{
+  position:absolute;background:var(--surface);border:1.5px solid var(--line);
+  border-radius:var(--r-pill);padding:.4rem .85rem;font-family:var(--font-mono);
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;box-shadow:var(--shadow-1);
+  white-space:nowrap;
+}
+.hero__tag--a{top:1%;right:0;color:var(--brand-ink);animation:float 6s var(--ease) infinite}
+.hero__tag--b{bottom:12%;left:0;color:var(--accent);animation:float 7.4s var(--ease) infinite .8s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* steam + drip motion */
+.steam{stroke-dasharray:5 7;animation:steam 4.5s linear infinite;opacity:.75}
+.steam--2{animation-duration:5.6s;animation-delay:-1.2s}
+.steam--3{animation-duration:6.4s;animation-delay:-2.4s}
+@keyframes steam{to{stroke-dashoffset:-96}}
+.drip{animation:drip 2.6s var(--ease) infinite}
+@keyframes drip{0%{transform:translateY(0);opacity:0}18%{opacity:1}72%{transform:translateY(52px);opacity:1}100%{transform:translateY(58px);opacity:0}}
+
+/* ============================================================
+   MARQUEE / STATS STRIP
+   ============================================================ */
+.strip{border-block:1px solid var(--line);background:var(--paper-2);overflow:hidden}
+.strip__track{display:flex;gap:var(--s-7);padding-block:var(--s-4);width:max-content;animation:slide 34s linear infinite}
+.strip:hover .strip__track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.strip__item{display:flex;align-items:center;gap:.6rem;font-family:var(--font-mono);font-size:var(--step--1);text-transform:uppercase;letter-spacing:.16em;color:var(--ink-3);white-space:nowrap}
+.strip__item b{color:var(--brand-ink);font-weight:600}
+.strip__dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+/* ============================================================
+   GENERIC LAYOUT HELPERS
+   ============================================================ */
+.head{max-width:64ch;margin-bottom:var(--s-7)}
+.head--split{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--s-6);max-width:none;align-items:end}
+.grid{display:grid;gap:var(--s-5)}
+.grid--2{grid-template-columns:repeat(2,1fr)}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.card{
+  background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r-lg);
+  padding:var(--s-5);box-shadow:var(--shadow-1);
+  transition:transform .28s var(--ease),box-shadow .28s var(--ease),border-color .28s;
+}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-2);border-color:var(--line-strong)}
+
+/* ============================================================
+   STORY
+   ============================================================ */
+.story{display:grid;grid-template-columns:.95fr 1.05fr;gap:var(--s-8);align-items:center}
+.story__art{background:var(--surface-2);border:1.5px solid var(--line);border-radius:var(--r-xl);padding:var(--s-5);position:relative}
+.story__art svg{width:100%;height:auto}
+.story__caption{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-align:center;margin-top:var(--s-3)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-4);margin-top:var(--s-6);border-top:1px solid var(--line);padding-top:var(--s-5)}
+.pillars dt{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-ink);margin-bottom:.35rem}
+.pillars dd{margin:0;font-size:.92rem;color:var(--ink-2);line-height:1.5}
+
+/* ============================================================
+   ORIGINS
+   ============================================================ */
+.origins{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-5)}
+.origin{
+  display:flex;flex-direction:column;background:var(--surface);
+  border:1.5px solid var(--line);border-radius:var(--r-lg);overflow:hidden;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;
+}
+.origin:hover{transform:translateY(-6px);box-shadow:var(--shadow-2);border-color:var(--brand)}
+.origin__top{position:relative;padding:var(--s-5) var(--s-5) 0;background:var(--surface-2);border-bottom:1.5px solid var(--line)}
+.origin__bag{width:100%;height:150px}
+.origin__badge{
+  position:absolute;top:var(--s-4);right:var(--s-4);font-family:var(--font-mono);
+  font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .6rem;
+  border-radius:var(--r-pill);background:var(--paper);border:1px solid var(--line);color:var(--ink-2);
+}
+.origin__badge--new{background:var(--accent-wash);color:var(--accent);border-color:transparent;font-weight:600}
+.origin__body{padding:var(--s-5);display:flex;flex-direction:column;flex:1}
+.origin__region{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.4rem}
+.origin h3{font-size:var(--step-1);margin-bottom:.5rem}
+.origin p{font-size:.92rem;color:var(--ink-2);line-height:1.6;margin-bottom:var(--s-4)}
+.notes{display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;padding:0;margin:0 0 var(--s-4)}
+.notes li{margin:0;font-size:.72rem;padding:.24rem .6rem;border-radius:var(--r-pill);background:var(--brand-wash);color:var(--brand-ink);font-weight:600}
+.origin__spec{display:grid;grid-template-columns:repeat(2,1fr);gap:.4rem var(--s-3);font-size:.76rem;color:var(--ink-3);font-family:var(--font-mono);border-top:1px dashed var(--line);padding-top:var(--s-3);margin-bottom:var(--s-4)}
+.origin__spec b{color:var(--ink-2);font-weight:600}
+.origin__buy{display:flex;align-items:center;justify-content:space-between;gap:var(--s-3);margin-top:auto}
+.price{font-family:var(--font-display);font-size:var(--step-2);line-height:1}
+.price small{font-family:var(--font-mono);font-size:.66rem;color:var(--ink-3);display:block;letter-spacing:.1em;margin-top:.25rem}
+
+/* ============================================================
+   PROCESS TIMELINE
+   ============================================================ */
+.process{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-5);margin-top:var(--s-7)}
+.process::before{content:"";position:absolute;top:34px;left:6%;right:6%;height:2px;background:repeating-linear-gradient(90deg,var(--line-strong) 0 8px,transparent 8px 16px)}
+.step{position:relative;text-align:center}
+.step__num{
+  width:68px;height:68px;margin:0 auto var(--s-4);border-radius:50%;display:grid;place-items:center;
+  background:var(--paper);border:2px solid var(--line-strong);font-family:var(--font-display);
+  font-size:1.5rem;color:var(--brand);position:relative;z-index:1;
+  transition:border-color .3s,transform .3s var(--ease),background .3s;
+}
+.step:hover .step__num{border-color:var(--brand);transform:scale(1.08);background:var(--brand-wash)}
+.step h4{margin-bottom:.4rem}
+.step p{font-size:.9rem;color:var(--ink-2);margin:0}
+
+/* ============================================================
+   SUBSCRIPTIONS
+   ============================================================ */
+.plans-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:var(--s-5);margin-bottom:var(--s-7)}
+.toggle{display:flex;align-items:center;gap:var(--s-3);flex-wrap:wrap}
+.toggle__switch{
+  display:inline-flex;padding:5px;border-radius:var(--r-pill);
+  background:var(--surface-2);border:1.5px solid var(--line);position:relative;
+}
+.toggle__switch button{
+  position:relative;z-index:1;border:0;background:transparent;cursor:pointer;
+  padding:.5rem 1.1rem;border-radius:var(--r-pill);font-size:.88rem;font-weight:600;
+  color:var(--ink-3);transition:color .25s;
+}
+.toggle__switch button[aria-pressed="true"]{color:#fff}
+.toggle__thumb{
+  position:absolute;top:5px;bottom:5px;left:5px;width:var(--thumb-w,50%);
+  background:var(--brand);border-radius:var(--r-pill);transition:transform .34s var(--ease),width .34s var(--ease);
+  box-shadow:var(--shadow-1);
+}
+.save-pill{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-wash);padding:.32rem .7rem;border-radius:var(--r-pill);font-weight:600}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-5);align-items:start}
+.plan{
+  background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r-xl);
+  padding:var(--s-6) var(--s-5);display:flex;flex-direction:column;position:relative;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;
+}
+.plan:hover{transform:translateY(-5px);box-shadow:var(--shadow-2)}
+.plan--featured{border-color:var(--brand);box-shadow:var(--shadow-2);background:var(--paper-2)}
+.plan--featured::after{
+  content:"Most subscribed";position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--brand);color:#fff;font-family:var(--font-mono);font-size:.62rem;
+  letter-spacing:.14em;text-transform:uppercase;padding:.35rem .85rem;border-radius:var(--r-pill);white-space:nowrap;
+}
+.plan__name{font-family:var(--font-display);font-size:var(--step-2);margin-bottom:.3rem}
+.plan__for{font-size:.88rem;color:var(--ink-3);margin-bottom:var(--s-5);min-height:2.6em}
+.plan__price{display:flex;align-items:baseline;gap:.4rem;font-family:var(--font-display)}
+.plan__amount{font-size:var(--step-4);line-height:1;letter-spacing:-.03em;transition:opacity .22s var(--ease),transform .22s var(--ease)}
+.plan__amount.is-swapping{opacity:0;transform:translateY(-8px)}
+.plan__per{font-family:var(--font-mono);font-size:.74rem;color:var(--ink-3);letter-spacing:.08em}
+.plan__billed{font-family:var(--font-mono);font-size:.7rem;color:var(--accent);margin:.45rem 0 var(--s-5);min-height:1.2em;letter-spacing:.06em}
+.plan ul{list-style:none;padding:0;margin:0 0 var(--s-6);border-top:1px solid var(--line);padding-top:var(--s-5)}
+.plan li{display:flex;gap:.6rem;font-size:.92rem;color:var(--ink-2);margin-bottom:.65rem;line-height:1.5}
+.plan li svg{flex:0 0 17px;width:17px;height:17px;margin-top:.28em;stroke:var(--accent);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.plan .btn{margin-top:auto}
+.plans-note{margin-top:var(--s-5);font-size:.86rem;color:var(--ink-3);text-align:center}
+
+/* ============================================================
+   BREW TABS
+   ============================================================ */
+.brew{background:var(--paper-2);border-block:1px solid var(--line)}
+.tabs{display:flex;gap:var(--s-2);flex-wrap:wrap;margin-bottom:var(--s-6);border-bottom:1.5px solid var(--line);padding-bottom:var(--s-4)}
+.tab{
+  border:1.5px solid var(--line);background:var(--surface);cursor:pointer;
+  padding:.6rem 1.1rem;border-radius:var(--r-pill);font-size:.9rem;font-weight:600;color:var(--ink-2);
+  display:flex;align-items:center;gap:.5rem;transition:all .24s var(--ease);
+}
+.tab:hover{border-color:var(--brand);color:var(--brand-ink)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab__dot{width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
+.tab[aria-selected="true"] .tab__dot{background:var(--gold)}
+.panel[hidden]{display:none}
+.panel{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--s-7);align-items:center;animation:fadeUp .4s var(--ease)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.panel__art{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r-xl);padding:var(--s-5);display:grid;place-items:center}
+.panel__art svg{width:100%;max-width:280px;height:auto}
+.recipe{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-3);margin:var(--s-5) 0}
+.recipe div{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r-md);padding:var(--s-3)}
+.recipe dt{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.25rem}
+.recipe dd{margin:0;font-family:var(--font-display);font-size:1.22rem;line-height:1.1}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;display:flex;gap:var(--s-4);padding:var(--s-3) 0;border-bottom:1px dashed var(--line);font-size:.94rem;color:var(--ink-2)}
+.steps li::before{
+  content:counter(s,decimal-leading-zero);font-family:var(--font-mono);font-size:.74rem;
+  color:var(--brand);flex:0 0 auto;padding-top:.15em;font-weight:600;
+}
+.steps li:last-child{border-bottom:0}
+
+/* ============================================================
+   CAFE / VISIT
+   ============================================================ */
+.visit{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s-8);align-items:center}
+.hours{list-style:none;padding:0;margin:var(--s-5) 0 0;border-top:1px solid var(--line)}
+.hours li{display:flex;justify-content:space-between;gap:var(--s-4);padding:.7rem 0;border-bottom:1px solid var(--line);font-size:.94rem;margin:0}
+.hours b{font-family:var(--font-mono);font-size:.82rem;color:var(--ink-2);font-weight:500}
+.visit__map{border:1.5px solid var(--line);border-radius:var(--r-xl);background:var(--surface);padding:var(--s-4);box-shadow:var(--shadow-1)}
+.visit__map svg{width:100%;height:auto;border-radius:var(--r-md)}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-5)}
+.quote{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r-lg);padding:var(--s-6) var(--s-5) var(--s-5);position:relative}
+.quote::before{content:"\201C";position:absolute;top:-.05em;left:.3em;font-family:var(--font-display);font-size:5rem;color:var(--brand);opacity:.24;line-height:1}
+.quote blockquote{margin:0 0 var(--s-4);font-size:1.02rem;line-height:1.6;color:var(--ink);position:relative}
+.quote figcaption{display:flex;align-items:center;gap:.7rem;font-size:.86rem;color:var(--ink-3);border-top:1px solid var(--line);padding-top:var(--s-3)}
+.avatar{width:38px;height:38px;border-radius:50%;background:var(--brand-wash);color:var(--brand-ink);display:grid;place-items:center;font-family:var(--font-display);font-size:1rem;flex:0 0 38px}
+.quote figcaption b{color:var(--ink);font-weight:600;display:block}
+.quote figcaption em{font-style:normal;display:block}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{max-width:860px;margin-inline:auto}
+.acc{border-top:1.5px solid var(--line)}
+.acc__item{border-bottom:1.5px solid var(--line)}
+.acc__btn{
+  width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:var(--s-4);
+  background:none;border:0;cursor:pointer;text-align:left;padding:var(--s-5) 0;
+  font-family:var(--font-display);font-size:var(--step-1);color:var(--ink);transition:color .2s;
+}
+.acc__btn:hover{color:var(--brand-ink)}
+.acc__icon{flex:0 0 30px;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line-strong);display:grid;place-items:center;position:relative;transition:transform .34s var(--ease),background .24s,border-color .24s;margin-top:.15em}
+.acc__icon::before,.acc__icon::after{content:"";position:absolute;background:currentColor;border-radius:2px;transition:opacity .24s,transform .34s var(--ease)}
+.acc__icon::before{width:12px;height:2px}
+.acc__icon::after{width:2px;height:12px}
+.acc__btn[aria-expanded="true"] .acc__icon{background:var(--brand);border-color:var(--brand);color:#fff;transform:rotate(180deg)}
+.acc__btn[aria-expanded="true"] .acc__icon::after{opacity:0;transform:scaleY(0)}
+.acc__panel{overflow:hidden;height:0;transition:height .36s var(--ease)}
+.acc__panel > div{padding:0 0 var(--s-5);max-width:70ch;color:var(--ink-2)}
+.acc__panel p:last-child{margin-bottom:0}
+
+/* ============================================================
+   CTA + FOOTER
+   ============================================================ */
+.cta{position:relative;overflow:hidden;background:var(--ink);color:var(--paper);border-radius:var(--r-xl);padding:var(--s-8) var(--s-6);text-align:center}
+[data-theme="dark"] .cta{background:var(--surface-2);border:1.5px solid var(--line)}
+.cta::before{content:"";position:absolute;inset:auto -10% -60% -10%;height:150%;background:radial-gradient(50% 50% at 50% 0%,color-mix(in srgb,var(--brand) 45%,transparent),transparent 70%);opacity:.55}
+.cta > *{position:relative;z-index:1}
+.cta h2{color:var(--paper);margin-bottom:var(--s-4)}
+.cta p{color:color-mix(in srgb,var(--paper) 74%,transparent);max-width:56ch;margin-inline:auto}
+.signup{display:flex;gap:var(--s-3);max-width:470px;margin:var(--s-6) auto 0;flex-wrap:wrap}
+.signup input{
+  flex:1;min-width:210px;padding:.85rem 1.15rem;border-radius:var(--r-pill);
+  border:1.5px solid color-mix(in srgb,var(--paper) 30%,transparent);
+  background:color-mix(in srgb,var(--paper) 10%,transparent);color:var(--paper);font-size:.95rem;
+}
+.signup input::placeholder{color:color-mix(in srgb,var(--paper) 52%,transparent)}
+.signup input:focus{outline:3px solid var(--gold);outline-offset:2px}
+.form-msg{margin-top:var(--s-4);font-family:var(--font-mono);font-size:.78rem;color:var(--gold-300);min-height:1.3em}
+.footer{padding-block:var(--s-8) var(--s-6);border-top:1px solid var(--line);margin-top:var(--s-9)}
+.footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:var(--s-6)}
+.footer h4{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:var(--s-4);font-weight:500}
+.footer ul{list-style:none;padding:0;margin:0}
+.footer li{margin-bottom:.55rem}
+.footer a{text-decoration:none;color:var(--ink-2);font-size:.92rem;transition:color .2s}
+.footer a:hover{color:var(--brand-ink)}
+.footer__base{display:flex;flex-wrap:wrap;gap:var(--s-4);justify-content:space-between;align-items:center;margin-top:var(--s-7);padding-top:var(--s-5);border-top:1px solid var(--line);font-size:.82rem;color:var(--ink-3);font-family:var(--font-mono);letter-spacing:.04em}
+
+/* ============================================================
+   RESPONSIVE — 1280 / 768 / 360
+   ============================================================ */
+@media (max-width:1120px){
+  .origins,.plans,.quotes,.process{grid-template-columns:repeat(2,1fr)}
+  .process::before{display:none}
+  .footer__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  :root{--s-9:4.5rem}
+  .hero__grid,.story,.visit,.panel,.head--split{grid-template-columns:1fr}
+  .hero__grid{gap:var(--s-6)}
+  .hero__art{order:-1;max-width:440px;margin-inline:auto}
+  .story__art{order:-1}
+  .nav__links{
+    position:fixed;inset:72px 0 auto;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--paper);border-bottom:1px solid var(--line);padding:var(--s-3) 1.25rem var(--s-5);
+    box-shadow:var(--shadow-2);transform:translateY(-130%);transition:transform .36s var(--ease);
+    margin-left:0;
+  }
+  .nav__links.is-open{transform:translateY(0)}
+  .nav__links a{padding:.85rem .6rem;font-size:1.05rem;border-radius:var(--r-md)}
+  .nav__tools{margin-left:auto}
+  .nav__burger{display:grid}
+  .recipe{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .wrap{width:min(100% - 2rem,var(--wrap))}
+  :root{--s-9:3.5rem;--s-8:2.75rem}
+  .origins,.plans,.quotes,.process,.grid--2,.grid--3,.pillars,.footer__grid{grid-template-columns:1fr}
+  .plan--featured{order:-1}
+  .plans-head{flex-direction:column;align-items:flex-start}
+  .cta{padding:var(--s-7) var(--s-4);border-radius:var(--r-lg)}
+  .btn{width:100%}
+  .hero__cta .btn{width:auto;flex:1 1 auto}
+  .brand small{display:none}
+  .footer__base{flex-direction:column;align-items:flex-start;text-align:left}
+}
+@media (max-width:380px){
+  .hero__tag{font-size:.6rem;padding:.3rem .6rem}
+  .recipe{grid-template-columns:1fr 1fr}
+  .tabs{gap:.35rem}
+  .tab{padding:.5rem .8rem;font-size:.82rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<!-- shared SVG defs: the roughen filter gives every illustration its hand-drawn wobble -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <filter id="roughen">
+    <feTurbulence type="fractalNoise" baseFrequency="0.032" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<a class="sr-only skip-link" href="#main">Skip to main content</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="#top" aria-label="Latitude 15 degrees, home">
+      <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+        <g class="ink rough">
+          <circle cx="24" cy="24" r="19"/>
+          <path d="M24 6c-6.5 5-6.5 31 0 36"/>
+          <path d="M24 6c6.5 5 6.5 31 0 36"/>
+          <path d="M6.5 18h35M6.5 30h35"/>
+        </g>
+        <circle cx="24" cy="24" r="3.4" class="fill-brand"/>
+      </svg>
+      <span>Latitude 15°<small>Assagao · Goa</small></span>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#origins">Origins</a></li>
+        <li><a href="#roastery">Roastery</a></li>
+        <li><a href="#subscribe">Subscribe</a></li>
+        <li><a href="#brew">Brew guides</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav__tools">
+      <button class="icon-btn" id="cartBtn" type="button" aria-label="0 bags in your order">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1.2 11.2a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count" id="cartCount" aria-hidden="true">0</span>
+      </button>
+      <button class="icon-btn" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+      </button>
+      <button class="icon-btn nav__burger" id="burger" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<a id="top"></a>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero section" aria-labelledby="hero-title">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow">Small-batch roasters · est. 2016</p>
+      <h1 id="hero-title">Coffee grown on the<br/><em>ghats<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8c34-6 68-7 100-4s62 5 96-2" class="ink" style="stroke:var(--gold);stroke-width:5"/></svg></em>, roasted by the sea.</h1>
+      <p class="lede">We buy from eleven estates across the Western Ghats and the Araku Valley, roast them in twelve-kilo batches in a converted Portuguese house in Assagao, and put the date on the bag in ink you can actually read. Nothing sits on our shelf longer than nine days.</p>
+      <div class="hero__meta">
+        <span>Roasted Tuesdays &amp; Fridays</span>
+        <span>Free shipping over ₹1,500</span>
+        <span>Ships across India in 2–4 days</span>
+      </div>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#origins">Shop the origins
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#subscribe">See subscriptions</a>
+      </div>
+    </div>
+
+    <!-- ---- PRODUCT ARTIFACT: hand-drawn pour-over kit ---- -->
+    <div class="hero__art">
+      <span class="hero__tag hero__tag--a">Batch 214 · roasted 6 days ago</span>
+      <span class="hero__tag hero__tag--b">92.5 cupping score</span>
+      <svg viewBox="0 0 480 520" role="img" aria-labelledby="heroArtTitle heroArtDesc">
+        <title id="heroArtTitle">A hand-drawn pour-over brewing kit</title>
+        <desc id="heroArtDesc">An ink sketch of a gooseneck kettle pouring into a cone dripper set on a glass carafe, with a bag of Latitude 15 degrees coffee and loose beans beside it.</desc>
+
+        <!-- table shadow -->
+        <ellipse cx="240" cy="474" rx="196" ry="20" fill="var(--sketch)" opacity=".08"/>
+
+        <g class="rough">
+          <!-- steam -->
+          <g class="ink-thin" style="stroke:var(--ink-3)">
+            <path class="steam" d="M214 128c-14-16 12-28-2-44s10-26 2-38"/>
+            <path class="steam steam--2" d="M246 122c-14-16 12-28-2-44s10-24 2-36"/>
+            <path class="steam steam--3" d="M278 130c-12-15 11-26-2-41s9-23 2-34"/>
+          </g>
+
+          <!-- cone dripper -->
+          <path d="M150 176h192l-70 118h-52Z" class="ink fill-wash"/>
+          <path d="M150 176h192" class="ink" style="stroke-width:3.4"/>
+          <path d="M186 176l-40 22M214 176l-52 30M246 176l-64 38M278 176l-70 42M310 176l-58 34" class="ink-thin" opacity=".45"/>
+          <!-- filter paper rim -->
+          <path d="M164 188c26 9 128 9 154 0" class="ink-thin"/>
+          <!-- coffee bed -->
+          <path d="M186 234h108l-22 38h-64Z" class="fill-brand"/>
+          <path d="M186 234h108" class="ink-thin"/>
+
+          <!-- drips -->
+          <g class="drip"><ellipse cx="240" cy="300" rx="4.6" ry="7" class="fill-brand"/></g>
+
+          <!-- carafe -->
+          <path d="M176 318c0 62 12 96 64 96s64-34 64-96c0-9-6-14-16-14H192c-10 0-16 5-16 14Z" class="ink fill-paper"/>
+          <path d="M186 356c0 52 10 78 54 78s54-26 54-78" fill="var(--brand)" opacity=".7"/>
+          <path d="M186 356c14 8 94 8 108 0" class="ink-thin" style="stroke:var(--paper-2)"/>
+          <!-- carafe handle -->
+          <path d="M304 336c26 2 34 18 30 34s-18 22-30 20" class="ink"/>
+          <!-- measure marks -->
+          <path d="M196 372h16M196 390h11M196 408h16" class="ink-thin" style="stroke:var(--paper-2)" opacity=".8"/>
+
+          <!-- gooseneck kettle -->
+          <path d="M334 208c0-34 22-56 56-56s56 22 56 56v54c0 20-16 34-40 34h-32c-24 0-40-14-40-34Z" class="ink fill-paper"/>
+          <path d="M334 226h112" class="ink-thin" opacity=".5"/>
+          <!-- spout curving toward the cone -->
+          <path d="M334 224c-34 4-56 22-64 46s-6 40 2 52" class="ink" style="stroke-width:6"/>
+          <path d="M334 224c-34 4-56 22-64 46s-6 40 2 52" class="ink" style="stroke:var(--paper-2);stroke-width:2.6"/>
+          <!-- water stream -->
+          <path d="M272 324c2 12 0 22-6 30" class="ink-thin" style="stroke:var(--accent);stroke-width:3"/>
+          <!-- handle + lid -->
+          <path d="M446 214c30 0 40 20 40 42s-12 40-40 40" class="ink"/>
+          <path d="M368 152h44l-6-18h-32Z" class="ink fill-wash"/>
+          <circle cx="390" cy="126" r="7" class="ink fill-brand"/>
+
+          <!-- coffee bag (the product) -->
+          <path d="M28 262h116c6 0 10 4 10 10v168c0 8-6 14-14 14H32c-8 0-14-6-14-14V272c0-6 4-10 10-10Z" class="ink fill-paper"/>
+          <path d="M28 262l12-22h92l12 22" class="ink fill-wash"/>
+          <path d="M40 240c14 10 78 10 92 0" class="ink-thin"/>
+          <!-- label block -->
+          <rect x="38" y="292" width="96" height="112" rx="8" class="ink" style="fill:var(--brand);opacity:.92"/>
+          <g style="stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round">
+            <circle cx="86" cy="322" r="15"/>
+            <path d="M86 307c-5 4-5 26 0 30M86 307c5 4 5 26 0 30M71 322h30"/>
+            <path d="M56 352h60M56 364h44M56 376h52" opacity=".85"/>
+          </g>
+          <text x="86" y="396" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#fff" letter-spacing="2">250 G</text>
+          <path d="M38 418h96" class="ink-thin" opacity=".4"/>
+          <!-- valve -->
+          <circle cx="86" cy="432" r="8" class="ink-thin"/>
+
+          <!-- loose beans -->
+          <g class="ink-thin">
+            <g transform="translate(168 452) rotate(-18)"><ellipse cx="0" cy="0" rx="15" ry="10" class="fill-brand"/><path d="M-15 0c6-6 24-6 30 0" style="stroke:var(--paper-2)"/></g>
+            <g transform="translate(206 466) rotate(12)"><ellipse cx="0" cy="0" rx="15" ry="10" class="fill-brand"/><path d="M-15 0c6-6 24-6 30 0" style="stroke:var(--paper-2)"/></g>
+            <g transform="translate(330 458) rotate(28)"><ellipse cx="0" cy="0" rx="15" ry="10" class="fill-gold"/><path d="M-15 0c6-6 24-6 30 0" style="stroke:var(--paper-2)"/></g>
+            <g transform="translate(370 470) rotate(-6)"><ellipse cx="0" cy="0" rx="15" ry="10" class="fill-brand"/><path d="M-15 0c6-6 24-6 30 0" style="stroke:var(--paper-2)"/></g>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. MARQUEE STRIP ============ -->
+<section class="strip" aria-label="What we stand for">
+  <div class="strip__track" id="stripTrack">
+    <span class="strip__item"><b>11</b> partner estates</span><span class="strip__dot" aria-hidden="true"></span>
+    <span class="strip__item">Roast date <b>on every bag</b></span><span class="strip__dot" aria-hidden="true"></span>
+    <span class="strip__item"><b>₹</b> prices paid published quarterly</span><span class="strip__dot" aria-hidden="true"></span>
+    <span class="strip__item"><b>12 kg</b> Probat drum</span><span class="strip__dot" aria-hidden="true"></span>
+    <span class="strip__item">Compostable <b>kraft valve bags</b></span><span class="strip__dot" aria-hidden="true"></span>
+    <span class="strip__item"><b>Zero</b> dark roasts, ever</span><span class="strip__dot" aria-hidden="true"></span>
+  </div>
+</section>
+
+<!-- ============ 3. ROASTERY STORY ============ -->
+<section class="section" id="roastery" aria-labelledby="story-title">
+  <div class="wrap story">
+    <figure class="story__art" style="margin:0">
+      <svg viewBox="0 0 420 340" role="img" aria-labelledby="roasterTitle">
+        <title id="roasterTitle">A hand-drawn twelve kilo drum roaster with a cooling tray</title>
+        <g class="rough">
+          <!-- floor -->
+          <path d="M20 300h380" class="ink" style="stroke:var(--line-strong)"/>
+          <!-- legs -->
+          <path d="M96 300v-42M300 300v-42M120 300v-42M276 300v-42" class="ink"/>
+          <!-- body -->
+          <rect x="78" y="118" width="240" height="146" rx="20" class="ink fill-paper"/>
+          <!-- drum face -->
+          <circle cx="150" cy="190" r="52" class="ink" style="fill:var(--brand-wash)"/>
+          <circle cx="150" cy="190" r="38" class="ink-thin"/>
+          <path d="M150 152v76M112 190h76M123 163l54 54M177 163l-54 54" class="ink-thin" opacity=".55"/>
+          <circle cx="150" cy="190" r="9" class="fill-brand"/>
+          <!-- door handle -->
+          <path d="M202 190h26" class="ink" style="stroke-width:5"/>
+          <circle cx="234" cy="190" r="9" class="ink fill-gold"/>
+          <!-- control dials -->
+          <circle cx="270" cy="156" r="15" class="ink-thin"/><path d="M270 156l8-9" class="ink-thin"/>
+          <circle cx="270" cy="200" r="15" class="ink-thin"/><path d="M270 200l-9 5" class="ink-thin"/>
+          <rect x="248" y="228" width="46" height="16" rx="6" class="ink-thin" style="fill:var(--accent);opacity:.75"/>
+          <!-- hopper -->
+          <path d="M132 118l16-46h64l16 46" class="ink fill-wash"/>
+          <path d="M148 72c14 8 50 8 64 0" class="ink-thin"/>
+          <!-- chimney -->
+          <path d="M318 158h40v-96" class="ink" style="stroke-width:4"/>
+          <g class="ink-thin" style="stroke:var(--ink-3)">
+            <path class="steam" d="M358 56c-12-14 10-22-2-36"/>
+            <path class="steam steam--2" d="M338 48c-10-12 8-18-2-30"/>
+          </g>
+          <!-- cooling tray -->
+          <ellipse cx="120" cy="282" rx="66" ry="18" class="ink fill-paper"/>
+          <path d="M84 278c22 8 50 8 72 0" class="ink-thin" opacity=".5"/>
+          <ellipse cx="104" cy="278" rx="9" ry="6" class="fill-brand"/>
+          <ellipse cx="128" cy="283" rx="9" ry="6" class="fill-brand"/>
+          <ellipse cx="148" cy="276" rx="9" ry="6" class="fill-gold"/>
+          <!-- sack of green coffee -->
+          <path d="M330 300c-14 0-24-10-24-26s6-34 18-38h30c12 4 18 22 18 38s-10 26-24 26Z" class="ink" style="fill:var(--surface-2)"/>
+          <path d="M324 236c8-6 24-6 32 0" class="ink-thin"/>
+          <path d="M318 268h48" class="ink-thin" opacity=".5"/>
+          <text x="342" y="284" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="var(--ink-3)">60 KG</text>
+        </g>
+      </svg>
+      <figcaption class="story__caption">Fig. 1 — Our 12 kg Probat, "Dona Maria", installed 2019</figcaption>
+    </figure>
+
+    <div>
+      <p class="eyebrow">The roastery</p>
+      <h2 id="story-title">A house in Assagao that smells permanently of caramel.</h2>
+      <p>Latitude 15° started as a stubborn argument. In 2016 two of us were working in a café in Panjim where the house blend was bought by the sack, roasted somewhere unknown, and arrived tasting of ash and burnt sugar no matter how carefully we brewed it. We knew the estates were only a night's drive east. We knew the fruit coming off Baba Budangiri and the Biligiri hills was extraordinary. Somewhere between the hill and the cup, all of that was being incinerated.</p>
+      <p>So we bought a sample roaster, rented the back room of a crumbling Portuguese house off the Assagao–Anjuna road, and spent eleven months getting it wrong in public. Our first customers were surfers, chefs and a very patient bakery in Siolim who kept buying coffee we would not sell today. By 2019 we had the drum roaster, three estate relationships, and a rule we have never broken: no bag leaves the roastery more than nine days after it comes off the cooling tray.</p>
+      <p>Everything we do is downstream of that argument. We roast light-to-medium because the sugars in high-grown Indian arabica deserve to survive. We publish what we pay per kilogram of parchment, because "direct trade" is a phrase that means nothing without a number attached. And we cup every batch before it ships — sixteen bowls on a Wednesday morning, the whole team, no exceptions, including the two people whose job is mostly packing tape.</p>
+
+      <dl class="pillars">
+        <div><dt>Sourcing</dt><dd>Eleven estates, all visited during harvest. Average premium of 38% over the local mandi rate.</dd></div>
+        <div><dt>Roasting</dt><dd>12 kg batches, profiled by hand, logged to the second. Development ratio 19–23%.</dd></div>
+        <div><dt>Freshness</dt><dd>Roasted Tuesday and Friday. Dispatched within 48 hours. Best from day 7 to day 35.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. ORIGINS ============ -->
+<section class="section" id="origins" aria-labelledby="origins-title" style="background:var(--paper-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head head--split">
+      <div>
+        <p class="eyebrow">Current lots</p>
+        <h2 id="origins-title">Six coffees on the bench right now.</h2>
+      </div>
+      <p class="lede" style="font-size:var(--step-0)">Every lot below is a single origin, most of them single estate, and all of them roasted in the last nine days. Bags are 250 g whole bean by default — choose a grind at checkout and we will dial it for your brewer. Lots rotate as harvests run out; nothing here is a permanent fixture except the Ratnagiri.</p>
+    </div>
+
+    <div class="origins">
+      <!-- 1 -->
+      <article class="origin">
+        <div class="origin__top">
+          <span class="origin__badge">Washed</span>
+          <svg class="origin__bag" viewBox="0 0 200 150" role="img" aria-label="Sketch of a coffee bag from Ratnagiri Estate">
+            <g class="rough">
+              <path d="M62 42h76c5 0 8 3 8 8v88c0 6-4 10-10 10H64c-6 0-10-4-10-10V50c0-5 3-8 8-8Z" class="ink fill-paper"/>
+              <path d="M62 42l9-16h58l9 16" class="ink fill-wash"/>
+              <rect x="70" y="62" width="60" height="52" rx="6" class="fill-brand"/>
+              <g style="stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round"><path d="M84 88h32M100 74v28M88 78l24 20M112 78l-24 20"/></g>
+              <path d="M70 126h60" class="ink-thin" opacity=".4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="origin__body">
+          <p class="origin__region">Chikmagalur · Karnataka · 1,180 m</p>
+          <h3>Ratnagiri Estate</h3>
+          <p>Our house single origin and the only lot we buy year-round. Sélection 9 grown under silver oak and pepper vine, fully washed and dried on raised beds. Forgiving, sweet, and absurdly good with milk — this is the bag we give people who say they don't like black coffee.</p>
+          <ul class="notes"><li>Milk chocolate</li><li>Toasted almond</li><li>Red apple</li></ul>
+          <dl class="origin__spec">
+            <div><dt>Varietal</dt><dd><b>Sln 9</b></dd></div>
+            <div><dt>Roast</dt><dd><b>Medium</b></dd></div>
+          </dl>
+          <div class="origin__buy">
+            <p class="price">₹690<small>250 G BAG</small></p>
+            <button class="btn btn--ghost btn--sm" type="button">Add to bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="origin">
+        <div class="origin__top">
+          <span class="origin__badge origin__badge--new">New harvest</span>
+          <svg class="origin__bag" viewBox="0 0 200 150" role="img" aria-label="Sketch of a coffee bag from Monsoon Ridge">
+            <g class="rough">
+              <path d="M62 42h76c5 0 8 3 8 8v88c0 6-4 10-10 10H64c-6 0-10-4-10-10V50c0-5 3-8 8-8Z" class="ink fill-paper"/>
+              <path d="M62 42l9-16h58l9 16" class="ink" style="fill:var(--accent-wash)"/>
+              <rect x="70" y="62" width="60" height="52" rx="6" class="fill-accent"/>
+              <g style="stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round"><path d="M74 96c10-12 18 8 26-4s16 8 26-4M74 84c10-12 18 8 26-4s16 8 26-4"/></g>
+              <path d="M70 126h60" class="ink-thin" opacity=".4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="origin__body">
+          <p class="origin__region">Baba Budangiri · Karnataka · 1,450 m</p>
+          <h3>Monsoon Ridge</h3>
+          <p>A 72-hour anaerobic natural from the highest block on the ridge, picked in the second pass when the cherries are almost jammy. Loud, tropical and unapologetic. It will not taste like coffee to your uncle. Brew it as filter, never as espresso with milk.</p>
+          <ul class="notes"><li>Jackfruit</li><li>Rum-soaked cherry</li><li>Cocoa nib</li></ul>
+          <dl class="origin__spec">
+            <div><dt>Varietal</dt><dd><b>Cauvery</b></dd></div>
+            <div><dt>Roast</dt><dd><b>Light</b></dd></div>
+          </dl>
+          <div class="origin__buy">
+            <p class="price">₹720<small>250 G BAG</small></p>
+            <button class="btn btn--ghost btn--sm" type="button">Add to bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="origin">
+        <div class="origin__top">
+          <span class="origin__badge">Honey</span>
+          <svg class="origin__bag" viewBox="0 0 200 150" role="img" aria-label="Sketch of a coffee bag from Attikan Estate">
+            <g class="rough">
+              <path d="M62 42h76c5 0 8 3 8 8v88c0 6-4 10-10 10H64c-6 0-10-4-10-10V50c0-5 3-8 8-8Z" class="ink fill-paper"/>
+              <path d="M62 42l9-16h58l9 16" class="ink fill-wash"/>
+              <rect x="70" y="62" width="60" height="52" rx="6" class="fill-gold"/>
+              <g style="stroke:var(--bean-800);fill:none;stroke-width:1.8;stroke-linecap:round"><path d="M100 68v40M100 108c-14 0-22-10-22-20M100 108c14 0 22-10 22-20"/><circle cx="100" cy="80" r="6"/></g>
+              <path d="M70 126h60" class="ink-thin" opacity=".4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="origin__body">
+          <p class="origin__region">Biligiri Hills · Karnataka · 1,520 m</p>
+          <h3>Attikan Estate</h3>
+          <p>Grown inside a tiger reserve buffer at the top of the Biligirirangans, where the nights are cold enough to slow the cherry down. Yellow honey processed on the estate's own patio. The sweetest coffee we sell and the one that converts tea drinkers.</p>
+          <ul class="notes"><li>Jaggery</li><li>Ripe plum</li><li>Sandalwood</li></ul>
+          <dl class="origin__spec">
+            <div><dt>Varietal</dt><dd><b>SL-795</b></dd></div>
+            <div><dt>Roast</dt><dd><b>Light-med</b></dd></div>
+          </dl>
+          <div class="origin__buy">
+            <p class="price">₹780<small>250 G BAG</small></p>
+            <button class="btn btn--ghost btn--sm" type="button">Add to bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="origin">
+        <div class="origin__top">
+          <span class="origin__badge">Natural</span>
+          <svg class="origin__bag" viewBox="0 0 200 150" role="img" aria-label="Sketch of a coffee bag from Araku Valley">
+            <g class="rough">
+              <path d="M62 42h76c5 0 8 3 8 8v88c0 6-4 10-10 10H64c-6 0-10-4-10-10V50c0-5 3-8 8-8Z" class="ink fill-paper"/>
+              <path d="M62 42l9-16h58l9 16" class="ink fill-wash"/>
+              <rect x="70" y="62" width="60" height="52" rx="6" class="fill-brand"/>
+              <g style="stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round"><path d="M74 104l14-22 12 14 10-20 16 28Z"/><circle cx="114" cy="74" r="5"/></g>
+              <path d="M70 126h60" class="ink-thin" opacity=".4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="origin__body">
+          <p class="origin__region">Araku Valley · Andhra Pradesh · 1,100 m</p>
+          <h3>Araku Cooperative</h3>
+          <p>Bought from a 240-family Adivasi cooperative that has been farming organically in the Eastern Ghats for three generations. Dry-processed on bamboo mats. Softer and more floral than the ghat coffees, with a tea-like body that rewards a coarser grind.</p>
+          <ul class="notes"><li>Hibiscus</li><li>Brown sugar</li><li>Black tea</li></ul>
+          <dl class="origin__spec">
+            <div><dt>Varietal</dt><dd><b>S-274 mix</b></dd></div>
+            <div><dt>Roast</dt><dd><b>Light</b></dd></div>
+          </dl>
+          <div class="origin__buy">
+            <p class="price">₹840<small>250 G BAG</small></p>
+            <button class="btn btn--ghost btn--sm" type="button">Add to bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="origin">
+        <div class="origin__top">
+          <span class="origin__badge">Import · washed</span>
+          <svg class="origin__bag" viewBox="0 0 200 150" role="img" aria-label="Sketch of a coffee bag from Konga, Ethiopia">
+            <g class="rough">
+              <path d="M62 42h76c5 0 8 3 8 8v88c0 6-4 10-10 10H64c-6 0-10-4-10-10V50c0-5 3-8 8-8Z" class="ink fill-paper"/>
+              <path d="M62 42l9-16h58l9 16" class="ink" style="fill:var(--accent-wash)"/>
+              <rect x="70" y="62" width="60" height="52" rx="6" class="fill-accent"/>
+              <g style="stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round"><circle cx="100" cy="88" r="16"/><path d="M100 72v32M84 88h32M89 77l22 22M111 77l-22 22"/></g>
+              <path d="M70 126h60" class="ink-thin" opacity=".4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="origin__body">
+          <p class="origin__region">Konga, Yirgacheffe · Ethiopia · 1,950 m</p>
+          <h3>Konga Washing Station</h3>
+          <p>The one import we make room for each year, because nothing grown in India tastes like this and pretending otherwise would be dishonest. Heirloom landraces from smallholders around Konga, fully washed and dried for fourteen days. Jasmine on the nose, bergamot in the cup.</p>
+          <ul class="notes"><li>Jasmine</li><li>Bergamot</li><li>Lemon curd</li></ul>
+          <dl class="origin__spec">
+            <div><dt>Varietal</dt><dd><b>Heirloom</b></dd></div>
+            <div><dt>Roast</dt><dd><b>Light</b></dd></div>
+          </dl>
+          <div class="origin__buy">
+            <p class="price">₹1,180<small>250 G BAG</small></p>
+            <button class="btn btn--ghost btn--sm" type="button">Add to bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="origin">
+        <div class="origin__top">
+          <span class="origin__badge">Blend · espresso</span>
+          <svg class="origin__bag" viewBox="0 0 200 150" role="img" aria-label="Sketch of a coffee bag of the Susegad espresso blend">
+            <g class="rough">
+              <path d="M62 42h76c5 0 8 3 8 8v88c0 6-4 10-10 10H64c-6 0-10-4-10-10V50c0-5 3-8 8-8Z" class="ink fill-paper"/>
+              <path d="M62 42l9-16h58l9 16" class="ink fill-wash"/>
+              <rect x="70" y="62" width="60" height="52" rx="6" style="fill:var(--bean-700)"/>
+              <g style="stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round"><path d="M80 96h30a10 10 0 0 0 0-20H80Z"/><path d="M110 80h8a7 7 0 0 1 0 14h-8"/><path d="M78 106h36"/></g>
+              <path d="M70 126h60" class="ink-thin" opacity=".4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="origin__body">
+          <p class="origin__region">Chikmagalur + Coorg · seasonal blend</p>
+          <h3>Susegad Espresso</h3>
+          <p>Named after the Goan art of doing nothing well. Seventy per cent washed Ratnagiri for structure, thirty per cent natural Coorg robusta for crema and a thick, cocoa-heavy finish. Pulls sweet at 1:2 in 28 seconds and holds up to buffalo milk without disappearing.</p>
+          <ul class="notes"><li>Dark cocoa</li><li>Toffee</li><li>Roasted hazelnut</li></ul>
+          <dl class="origin__spec">
+            <div><dt>Blend</dt><dd><b>70/30</b></dd></div>
+            <div><dt>Roast</dt><dd><b>Medium</b></dd></div>
+          </dl>
+          <div class="origin__buy">
+            <p class="price">₹640<small>250 G BAG</small></p>
+            <button class="btn btn--ghost btn--sm" type="button">Add to bag</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. PROCESS ============ -->
+<section class="section" aria-labelledby="process-title">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Cherry to cup</p>
+      <h2 id="process-title">Four things happen between the hill and your kitchen.</h2>
+      <p class="lede">There is no mystery to good coffee, only a long chain of small decisions where somebody could have cut a corner and didn't. Here is ours, in order.</p>
+    </div>
+    <ol class="process" style="list-style:none;padding:0">
+      <li class="step">
+        <div class="step__num">01</div>
+        <h4>We go up in December</h4>
+        <p>Harvest runs November to February. We drive up, sleep on the estate, taste the day's picking and agree a price per kilo of parchment before a single sack moves.</p>
+      </li>
+      <li class="step">
+        <div class="step__num">02</div>
+        <h4>Milled and rested</h4>
+        <p>Parchment rests six to eight weeks at the estate, then goes to a mill in Hassan for hulling and screen sorting. We take screen 16 and above, hand-picked twice.</p>
+      </li>
+      <li class="step">
+        <div class="step__num">03</div>
+        <h4>Profiled by hand</h4>
+        <p>Every lot gets four to nine sample roasts before we commit a profile. We log charge temperature, turnaround, first crack and development time for each batch.</p>
+      </li>
+      <li class="step">
+        <div class="step__num">04</div>
+        <h4>Packed the same week</h4>
+        <p>Bags are filled by hand on Wednesday and Saturday, dated in ink, and handed to the courier before the coffee has finished degassing properly.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 6. SUBSCRIPTIONS ============ -->
+<section class="section" id="subscribe" aria-labelledby="subscribe-title" style="background:var(--paper-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="plans-head">
+      <div style="max-width:52ch">
+        <p class="eyebrow">Subscriptions</p>
+        <h2 id="subscribe-title">Coffee that turns up before you run out.</h2>
+        <p class="lede" style="font-size:var(--step-0);margin-bottom:0">Pick a size, pick a rhythm, and we will roast for you on the closest roast day to your dispatch date. Skip, pause, swap the coffee or cancel from your account in two clicks — no email to a human required, though we do like hearing from you.</p>
+      </div>
+
+      <div class="toggle">
+        <div class="toggle__switch" role="group" aria-label="Billing period">
+          <span class="toggle__thumb" id="toggleThumb" aria-hidden="true"></span>
+          <button type="button" id="billMonthly" aria-pressed="true">Monthly</button>
+          <button type="button" id="billAnnual" aria-pressed="false">Annual</button>
+        </div>
+        <span class="save-pill" id="savePill">Save 2 months on annual</span>
+      </div>
+    </div>
+
+    <div class="plans">
+      <article class="plan">
+        <h3 class="plan__name">Beachcomber</h3>
+        <p class="plan__for">One 250 g bag a month. For the person with one good cup a day and a small kitchen.</p>
+        <p class="plan__price"><span class="plan__amount" data-monthly="₹650" data-annual="₹542">₹650</span><span class="plan__per">/ month</span></p>
+        <p class="plan__billed" data-billed-monthly="Billed monthly · cancel anytime" data-billed-annual="₹6,500 billed once a year">Billed monthly · cancel anytime</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>One 250 g bag, roasted to order</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Rotating single origin, or lock one in</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Free delivery anywhere in India</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Tasting card and brew recipe in the box</li>
+        </ul>
+        <button class="btn btn--ghost btn--block" type="button">Start Beachcomber</button>
+      </article>
+
+      <article class="plan plan--featured">
+        <h3 class="plan__name">Roaster's Table</h3>
+        <p class="plan__for">Two 250 g bags a month, always one new lot. Our most popular plan by a distance.</p>
+        <p class="plan__price"><span class="plan__amount" data-monthly="₹1,180" data-annual="₹983">₹1,180</span><span class="plan__per">/ month</span></p>
+        <p class="plan__billed" data-billed-monthly="Billed monthly · cancel anytime" data-billed-annual="₹11,800 billed once a year">Billed monthly · cancel anytime</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Two 250 g bags, one always a new arrival</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>First access to micro-lots before they list</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>10% off everything else in the shop</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Invitation to the Saturday cupping in Assagao</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Free grind-setting help over WhatsApp</li>
+        </ul>
+        <button class="btn btn--primary btn--block" type="button">Start Roaster's Table</button>
+      </article>
+
+      <article class="plan">
+        <h3 class="plan__name">Café Programme</h3>
+        <p class="plan__for">Four kilos a month for cafés, homestays and offices that go through the good stuff fast.</p>
+        <p class="plan__price"><span class="plan__amount" data-monthly="₹8,400" data-annual="₹7,000">₹8,400</span><span class="plan__per">/ month</span></p>
+        <p class="plan__billed" data-billed-monthly="Billed monthly · 30 days' notice" data-billed-annual="₹84,000 billed once a year">Billed monthly · 30 days' notice</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>4 kg a month in 1 kg valve bags</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>On-site espresso dial-in, twice a year</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Barista training day for up to four staff</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Menu cards and origin notes, printed for you</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Priority roast slot every Tuesday</li>
+        </ul>
+        <button class="btn btn--ghost btn--block" type="button">Talk to us</button>
+      </article>
+    </div>
+    <p class="plans-note">All plans include grind-to-order, a roast date on every bag, and a no-questions refund on your first box if it isn't for you.</p>
+  </div>
+</section>
+
+<!-- ============ 7. BREW GUIDES ============ -->
+<section class="section brew" id="brew" aria-labelledby="brew-title">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Brew guides</p>
+      <h2 id="brew-title">Four recipes we actually use every morning.</h2>
+      <p class="lede">These are starting points, not scripture. If the cup tastes thin and sour, grind finer or use hotter water. If it tastes dry and bitter, grind coarser or pour less. Everything else is detail.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Brew methods">
+      <button class="tab" role="tab" id="tab-v60" aria-controls="panel-v60" aria-selected="true"><span class="tab__dot"></span>V60 pour-over</button>
+      <button class="tab" role="tab" id="tab-aero" aria-controls="panel-aero" aria-selected="false" tabindex="-1"><span class="tab__dot"></span>AeroPress</button>
+      <button class="tab" role="tab" id="tab-filter" aria-controls="panel-filter" aria-selected="false" tabindex="-1"><span class="tab__dot"></span>South Indian filter</button>
+      <button class="tab" role="tab" id="tab-cold" aria-controls="panel-cold" aria-selected="false" tabindex="-1"><span class="tab__dot"></span>Cold brew</button>
+    </div>
+
+    <!-- V60 -->
+    <div class="panel" role="tabpanel" id="panel-v60" aria-labelledby="tab-v60" tabindex="0">
+      <div class="panel__art">
+        <svg viewBox="0 0 220 240" role="img" aria-label="Hand-drawn V60 cone dripper on a carafe">
+          <g class="rough">
+            <path d="M46 54h128l-46 82h-36Z" class="ink fill-wash"/>
+            <path d="M46 54h128" class="ink" style="stroke-width:3.4"/>
+            <path d="M70 54l-20 14M94 54l-30 22M118 54l-38 28M142 54l-40 30" class="ink-thin" opacity=".4"/>
+            <path d="M74 96h72l-15 28h-42Z" class="fill-brand"/>
+            <path d="M60 32c34 10 66 10 100 0" class="ink-thin" style="stroke:var(--ink-3)"/>
+            <path d="M74 148c0 46 10 68 36 68s36-22 36-68c0-6-4-9-10-9H84c-6 0-10 3-10 9Z" class="ink fill-paper"/>
+            <path d="M82 172c0 38 6 54 28 54s28-16 28-54" class="fill-brand" opacity=".7"/>
+            <path d="M146 160c18 2 24 12 21 24s-13 15-21 14" class="ink"/>
+            <g class="ink-thin" style="stroke:var(--ink-3)"><path class="steam" d="M100 26c-9-11 8-19-2-30"/><path class="steam steam--2" d="M124 22c-9-11 8-19-2-28"/></g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h3>V60 · the clean one</h3>
+        <p>The best way to taste what an estate actually did. We use it for every light roast in the range, and it is the method our cupping table most closely resembles. A 02 cone, a paper filter rinsed with boiling water, and a scale you can read.</p>
+        <dl class="recipe">
+          <div><dt>Dose</dt><dd>15 g</dd></div>
+          <div><dt>Water</dt><dd>250 g</dd></div>
+          <div><dt>Temp</dt><dd>94 °C</dd></div>
+          <div><dt>Time</dt><dd>2:45</dd></div>
+        </dl>
+        <ol class="steps">
+          <li>Rinse the paper thoroughly, discard the water, and add coffee ground to the texture of table salt.</li>
+          <li>Bloom with 45 g of water. Swirl the cone gently, don't stir. Wait 40 seconds — you should see the bed dome and crack.</li>
+          <li>Pour to 150 g in slow concentric circles, staying off the paper wall.</li>
+          <li>Pour to 250 g once the bed has dropped about halfway. Give the cone one final swirl to flatten the bed.</li>
+          <li>Drawdown should finish around 2:45. Longer means grind coarser; much shorter means grind finer.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- AeroPress -->
+    <div class="panel" role="tabpanel" id="panel-aero" aria-labelledby="tab-aero" tabindex="0" hidden>
+      <div class="panel__art">
+        <svg viewBox="0 0 220 240" role="img" aria-label="Hand-drawn AeroPress in the inverted position">
+          <g class="rough">
+            <rect x="66" y="46" width="88" height="118" rx="10" class="ink fill-paper"/>
+            <path d="M66 92h88" class="ink-thin" opacity=".5"/>
+            <path d="M66 118h88" class="ink-thin" opacity=".5"/>
+            <rect x="72" y="98" width="76" height="60" rx="6" class="fill-brand" opacity=".65"/>
+            <rect x="74" y="18" width="72" height="30" rx="8" class="ink fill-wash"/>
+            <path d="M110 18v-12" class="ink"/>
+            <rect x="60" y="164" width="100" height="16" rx="6" class="ink fill-wash"/>
+            <path d="M78 180l8 34h48l8-34" class="ink fill-paper"/>
+            <circle cx="110" cy="196" r="12" class="ink-thin" style="stroke:var(--ink-3)"/>
+            <path d="M92 216c12 6 24 6 36 0" class="ink-thin"/>
+            <g class="ink-thin" style="stroke:var(--ink-3)"><path class="steam" d="M150 40c-9-11 8-19-2-30"/></g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h3>AeroPress · the forgiving one</h3>
+        <p>What we pack when we travel and what we hand to anyone who says brewing is too fiddly. Inverted, one paper filter, and a two-minute steep. It flatters medium roasts and rescues coffee ground slightly wrong.</p>
+        <dl class="recipe">
+          <div><dt>Dose</dt><dd>17 g</dd></div>
+          <div><dt>Water</dt><dd>220 g</dd></div>
+          <div><dt>Temp</dt><dd>88 °C</dd></div>
+          <div><dt>Time</dt><dd>2:15</dd></div>
+        </dl>
+        <ol class="steps">
+          <li>Assemble inverted with the plunger pushed in one centimetre. Grind medium-fine, like coarse sand.</li>
+          <li>Add all the coffee, then all 220 g of water in one confident pour. Stir three times, north to south.</li>
+          <li>Cap with a rinsed filter and steep for two minutes flat.</li>
+          <li>Flip onto a sturdy mug and press slowly — aim for thirty seconds of push. Stop at the hiss.</li>
+          <li>Top with 40 g hot water if you want a longer cup. Do not press the hiss; that's where the bitterness lives.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Filter coffee -->
+    <div class="panel" role="tabpanel" id="panel-filter" aria-labelledby="tab-filter" tabindex="0" hidden>
+      <div class="panel__art">
+        <svg viewBox="0 0 220 240" role="img" aria-label="Hand-drawn South Indian stainless steel filter with a tumbler and dabara">
+          <g class="rough">
+            <rect x="70" y="34" width="80" height="46" rx="8" class="ink fill-paper"/>
+            <path d="M70 52h80" class="ink-thin" opacity=".5"/>
+            <rect x="84" y="16" width="52" height="18" rx="6" class="ink fill-wash"/>
+            <path d="M110 16v-8" class="ink"/>
+            <rect x="70" y="80" width="80" height="56" rx="8" class="ink fill-paper"/>
+            <rect x="78" y="94" width="64" height="34" rx="5" class="fill-brand" opacity=".7"/>
+            <path d="M70 136h80" class="ink" style="stroke-width:3"/>
+            <path d="M100 136v14M120 136v14" class="ink-thin" style="stroke:var(--brand)"/>
+            <path d="M64 208h50l-6-52H70Z" class="ink fill-paper"/>
+            <path d="M66 172h46" class="fill-gold" opacity=".6"/>
+            <path d="M124 214c0-14 14-22 32-22s32 8 32 22Z" class="ink fill-paper"/>
+            <path d="M124 214h64" class="ink" style="stroke-width:3"/>
+            <path d="M132 200c14-6 34-6 48 0" class="ink-thin" opacity=".5"/>
+            <g class="ink-thin" style="stroke:var(--ink-3)"><path class="steam" d="M90 152c-9-11 8-19-2-30"/></g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h3>South Indian filter · the one we grew up on</h3>
+        <p>A stainless steel dabara set, a fine grind, and patience. This is the method half of Goa's kitchens already own, and our Susegad blend was built for it. Chicory optional, and we won't judge you either way — though we would try it clean at least once.</p>
+        <dl class="recipe">
+          <div><dt>Dose</dt><dd>22 g</dd></div>
+          <div><dt>Water</dt><dd>180 g</dd></div>
+          <div><dt>Temp</dt><dd>96 °C</dd></div>
+          <div><dt>Time</dt><dd>15 min</dd></div>
+        </dl>
+        <ol class="steps">
+          <li>Grind fine — finer than filter, coarser than espresso. The powder should clump when you squeeze it.</li>
+          <li>Load the upper chamber, level it, and press gently with the plunger disc. Do not compact it like a tamp.</li>
+          <li>Pour water just off the boil in one go, cover, and leave it completely alone for twelve to fifteen minutes.</li>
+          <li>You should collect roughly 90 ml of thick decoction. Anything faster means your grind is too coarse.</li>
+          <li>Mix one part decoction to three parts hot milk, sweeten to taste, and pull it between tumbler and dabara until it foams.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Cold brew -->
+    <div class="panel" role="tabpanel" id="panel-cold" aria-labelledby="tab-cold" tabindex="0" hidden>
+      <div class="panel__art">
+        <svg viewBox="0 0 220 240" role="img" aria-label="Hand-drawn jar of cold brew coffee with ice cubes">
+          <g class="rough">
+            <rect x="58" y="52" width="104" height="20" rx="7" class="ink fill-wash"/>
+            <path d="M62 72h96v122c0 14-10 22-26 22H88c-16 0-26-8-26-22Z" class="ink fill-paper"/>
+            <path d="M68 104h84v88c0 10-6 16-18 16H86c-12 0-18-6-18-16Z" class="fill-brand" opacity=".75"/>
+            <path d="M68 104c18 8 66 8 84 0" class="ink-thin" style="stroke:var(--paper-2)"/>
+            <g class="ink-thin" style="stroke:var(--paper-2);stroke-width:2">
+              <rect x="80" y="120" width="26" height="26" rx="5" transform="rotate(-12 93 133)"/>
+              <rect x="114" y="140" width="24" height="24" rx="5" transform="rotate(16 126 152)"/>
+              <rect x="86" y="164" width="24" height="24" rx="5" transform="rotate(8 98 176)"/>
+            </g>
+            <path d="M162 92c22 4 28 20 24 36s-16 22-24 20" class="ink"/>
+            <path d="M92 44c8-14 30-14 38 0" class="ink-thin" opacity=".5"/>
+            <path d="M110 24v20M100 32l10-10 10 10" class="ink-thin" style="stroke:var(--accent)"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h3>Cold brew · the one for April in Goa</h3>
+        <p>Between March and June, hot coffee stops being a good idea by nine in the morning. This makes a concentrate that keeps ten days in the fridge and dilutes into everything from a tall glass with tonic to an emergency evening iced latte.</p>
+        <dl class="recipe">
+          <div><dt>Dose</dt><dd>100 g</dd></div>
+          <div><dt>Water</dt><dd>700 g</dd></div>
+          <div><dt>Temp</dt><dd>Room</dd></div>
+          <div><dt>Time</dt><dd>16 hrs</dd></div>
+        </dl>
+        <ol class="steps">
+          <li>Grind coarse, like raw demerara sugar. Naturals and honeys shine here; save the delicate washed lots for filter.</li>
+          <li>Combine grounds and room-temperature water in a jar. Stir until every particle is wet, then seal.</li>
+          <li>Leave on the counter for four hours, then in the fridge for another twelve. Do not go past twenty hours.</li>
+          <li>Strain through a fine mesh, then once more through a rinsed paper filter for a cleaner glass.</li>
+          <li>Dilute one part concentrate to two parts water, milk or soda. Serve over a lot of ice, always.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. VISIT ============ -->
+<section class="section" id="visit" aria-labelledby="visit-title">
+  <div class="wrap visit">
+    <div>
+      <p class="eyebrow">The tasting room</p>
+      <h2 id="visit-title">Come and drink it where it's roasted.</h2>
+      <p>The front two rooms of the Assagao house are open to anyone who wanders in. There is a four-seat bar facing the roaster, a courtyard under a jackfruit tree with eleven mismatched chairs, and a filter batch on the go from opening until we run out. No laptops after eleven on weekends — that's the only rule, and it's non-negotiable in season.</p>
+      <p>Every Saturday at nine we cup whatever came off the drum that week. It's free, it's loud, and it lasts about ninety minutes. You do not need to know anything about coffee; you need to be able to slurp from a spoon without being self-conscious about it. Roaster's Table subscribers get a seat automatically, everyone else should message us on Instagram by Thursday.</p>
+      <ul class="hours">
+        <li><b>Monday – Thursday</b><span>8:00 – 18:00</span></li>
+        <li><b>Friday – Saturday</b><span>8:00 – 22:00</span></li>
+        <li><b>Sunday</b><span>9:00 – 15:00</span></li>
+        <li><b>Saturday cupping</b><span>9:00, free, all welcome</span></li>
+        <li><b>Monsoon (Jun–Aug)</b><span>Shorter hours, check Instagram</span></li>
+      </ul>
+    </div>
+
+    <figure class="visit__map" style="margin:0">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Hand-drawn map of North Goa showing the roastery in Assagao">
+        <rect x="0" y="0" width="400" height="300" rx="12" fill="var(--accent-wash)"/>
+        <g class="rough">
+          <!-- land mass -->
+          <path d="M120 -10c-18 40-6 78 4 112s-6 62 6 92 44 60 78 84 90 30 122 22V-10Z" fill="var(--paper-2)" stroke="var(--line-strong)" stroke-width="2"/>
+          <!-- sea texture -->
+          <g class="ink-thin" style="stroke:var(--accent);opacity:.4">
+            <path d="M14 60c12-8 24 8 36 0s24 8 36 0"/>
+            <path d="M14 108c12-8 24 8 36 0s24 8 36 0"/>
+            <path d="M20 158c12-8 24 8 36 0"/>
+            <path d="M40 216c12-8 24 8 36 0"/>
+          </g>
+          <!-- river -->
+          <path d="M400 168c-50 4-84-14-114-6s-56 34-92 30" class="ink-thin" style="stroke:var(--accent);stroke-width:4;opacity:.6"/>
+          <!-- roads -->
+          <path d="M164 262c22-40 44-56 62-96s16-72 36-96" class="ink-thin" style="stroke-dasharray:7 6;opacity:.7"/>
+          <path d="M110 128c50 10 96 22 150 14" class="ink-thin" style="stroke-dasharray:7 6;opacity:.7"/>
+          <!-- palms -->
+          <g class="ink-thin">
+            <path d="M300 240v-26M300 214c-12-8-20-4-24 2M300 214c12-8 20-4 24 2M300 214c-4-12 2-18 8-20"/>
+            <path d="M338 254v-22M338 232c-10-7-17-3-20 2M338 232c10-7 17-3 20 2"/>
+          </g>
+          <!-- labels -->
+          <text x="58" y="272" font-family="ui-monospace,monospace" font-size="11" fill="var(--accent)" letter-spacing="2">ARABIAN SEA</text>
+          <text x="216" y="86" font-family="ui-monospace,monospace" font-size="10" fill="var(--ink-3)" letter-spacing="1.5">ANJUNA</text>
+          <text x="286" y="196" font-family="ui-monospace,monospace" font-size="10" fill="var(--ink-3)" letter-spacing="1.5">MAPUSA</text>
+          <text x="140" y="196" font-family="ui-monospace,monospace" font-size="10" fill="var(--ink-3)" letter-spacing="1.5">VAGATOR</text>
+          <!-- pin -->
+          <g transform="translate(236 140)">
+            <path d="M0 0c-14 0-24 11-24 25 0 18 24 41 24 41s24-23 24-41C24 11 14 0 0 0Z" class="ink fill-brand"/>
+            <circle cx="0" cy="24" r="8" fill="var(--paper-2)"/>
+          </g>
+          <text x="236" y="126" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="var(--brand-ink)" letter-spacing="1.5" font-weight="600">LATITUDE 15°</text>
+        </g>
+      </svg>
+      <figcaption class="story__caption">House no. 412, Badem, Assagao, Bardez, Goa 403507 · +91 832 000 1500</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 9. TESTIMONIALS ============ -->
+<section class="section" aria-labelledby="quotes-title" style="background:var(--paper-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">From the people who drink it</p>
+      <h2 id="quotes-title">Nine years of very direct feedback.</h2>
+    </div>
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>I ordered the Monsoon Ridge expecting the usual "notes of" nonsense and got an actual mouthful of jackfruit. My husband thinks I've started drinking juice. The roast date said four days before it reached Bangalore, which I still don't quite believe.</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">SR</span><span><b>Shalini Rao</b><em>Home brewer, Bengaluru</em></span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>We switched our whole café over in 2022 and our regulars noticed within a week. What sold me wasn't the coffee, it was that someone drove down in June, spent six hours on our grinder, and refused to be paid for it.</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">FD</span><span><b>Francis D'Souza</b><em>Owner, Café Ondas, Panjim</em></span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>The Saturday cupping is the most fun I've had standing up at nine in the morning. I went once as a tourist and now I plan Goa trips around it. Also the Attikan is the only coffee my mother has ever asked me to reorder.</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">MK</span><span><b>Maya Kulkarni</b><em>Roaster's Table subscriber</em></span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. FAQ ============ -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq">
+    <div class="head" style="text-align:center;margin-inline:auto">
+      <p class="eyebrow" style="justify-content:center">Questions</p>
+      <h2 id="faq-title">Things people ask us, honestly answered.</h2>
+    </div>
+
+    <div class="acc" id="accordion">
+      <div class="acc__item">
+        <h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="true" aria-controls="faq1" id="faqb1">How fresh is the coffee when it reaches me?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+        <div class="acc__panel" id="faq1" role="region" aria-labelledby="faqb1"><div>
+          <p>We roast on Tuesdays and Fridays and dispatch within forty-eight hours of the batch coming off the cooling tray. Depending on where you are, that means the bag lands between three and seven days post-roast. Every bag is stamped with the actual roast date, not a "best before" that hides it.</p>
+          <p>Coffee is not at its best on day one, though. Light roasts need a week to degas properly. If you open a bag on day three and it tastes flat and gassy, close it and wait four more days — it will be a different coffee.</p>
+        </div></div>
+      </div>
+
+      <div class="acc__item">
+        <h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq2" id="faqb2">Should I buy whole bean or ground?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+        <div class="acc__panel" id="faq2" role="region" aria-labelledby="faqb2"><div>
+          <p>Whole bean, if you have any kind of grinder at all — even a modest hand grinder will beat pre-ground coffee that has been sitting in a bag losing aromatics for a fortnight. Ground coffee goes stale in roughly fifteen minutes; whole beans take weeks.</p>
+          <p>That said, we would rather you drink our coffee ground than not drink it. Tell us your brewer at checkout and we will grind it correctly on our EK, free, and pack it in a valve bag to slow things down as much as physics allows.</p>
+        </div></div>
+      </div>
+
+      <div class="acc__item">
+        <h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq3" id="faqb3">Do you ship outside Goa, and what does it cost?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+        <div class="acc__panel" id="faq3" role="region" aria-labelledby="faqb3"><div>
+          <p>We ship across India. Metros usually take two days, everywhere else three to four, and the Northeast and Andamans occasionally five. Shipping is ₹90 flat and free above ₹1,500 or on any subscription. Within Goa we deliver ourselves twice a week and it is always free.</p>
+          <p>We do not ship internationally yet. Customs paperwork for roasted coffee is genuinely miserable and we would rather spend that time roasting. If you are visiting, order ahead and collect from the roastery.</p>
+        </div></div>
+      </div>
+
+      <div class="acc__item">
+        <h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq4" id="faqb4">Why don't you sell a dark roast?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+        <div class="acc__panel" id="faq4" role="region" aria-labelledby="faqb4"><div>
+          <p>Because past a certain point you stop tasting the coffee and start tasting the fire. Roasting dark is a legitimate stylistic choice and also, very often, a way of hiding defective green coffee behind carbon. We pay too much for our lots to erase them.</p>
+          <p>If you want something bold and heavy, the Susegad Espresso blend is the darkest thing we make — a full medium, with real cocoa weight and no smokiness. Most people who tell us they want dark roast actually want body, and that is a very solvable problem.</p>
+        </div></div>
+      </div>
+
+      <div class="acc__item">
+        <h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq5" id="faqb5">Can I pause, skip or cancel a subscription?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+        <div class="acc__panel" id="faq5" role="region" aria-labelledby="faqb5"><div>
+          <p>Any time, from your account, in two clicks, without emailing anyone. Skip a single delivery if you are travelling, pause indefinitely, change the coffee, change the grind, change the address, or cancel outright. Annual plans can be cancelled too — we refund the unused months pro-rata.</p>
+          <p>The only thing we ask is that changes land before the Sunday preceding your dispatch, because after that your coffee is already on a roast plan and someone has written your name on a tin.</p>
+        </div></div>
+      </div>
+
+      <div class="acc__item">
+        <h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq6" id="faqb6">Is your packaging actually recyclable?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+        <div class="acc__panel" id="faq6" role="region" aria-labelledby="faqb6"><div>
+          <p>The bags are kraft paper with a compostable PLA liner and a degassing valve that is, honestly, still plastic. We have not found a valve that composts and holds a seal for a month; when someone makes one we will switch the same week.</p>
+          <p>Boxes are unbleached and taped with paper tape. Bring five empty bags back to the roastery and we will take ₹100 off your next order — we send them to a facility in Verna that actually processes PLA rather than landfilling it.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. NEWSLETTER CTA ============ -->
+<section class="section" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta">
+      <h2 id="cta-title">New lots land first in the inbox.</h2>
+      <p>One email a month, sent the morning a new harvest hits the shelf. Roast notes, what we paid, what went wrong, and the occasional recipe. No discount-code spam, and you can leave in one click.</p>
+      <form class="signup" id="signupForm" novalidate>
+        <label class="sr-only" for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+        <button class="btn btn--primary" type="submit">Subscribe</button>
+      </form>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="#top" style="margin-bottom:var(--s-4)">
+          <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+            <g class="ink rough"><circle cx="24" cy="24" r="19"/><path d="M24 6c-6.5 5-6.5 31 0 36M24 6c6.5 5 6.5 31 0 36M6.5 18h35M6.5 30h35"/></g>
+            <circle cx="24" cy="24" r="3.4" class="fill-brand"/>
+          </svg>
+          <span>Latitude 15°<small>Assagao · Goa</small></span>
+        </a>
+        <p class="muted" style="font-size:.9rem;max-width:34ch">Small-batch specialty coffee roasted in North Goa since 2016. Eleven estates, two roast days a week, one very old Probat.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#origins">All coffee</a></li>
+          <li><a href="#subscribe">Subscriptions</a></li>
+          <li><a href="#origins">Espresso blend</a></li>
+          <li><a href="#subscribe">Wholesale</a></li>
+          <li><a href="#origins">Gift boxes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="#brew">Brew guides</a></li>
+          <li><a href="#roastery">Our roastery</a></li>
+          <li><a href="#visit">Saturday cupping</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#roastery">Prices we pay</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="#visit">412 Badem, Assagao</a></li>
+          <li><a href="tel:+918320001500">+91 832 000 1500</a></li>
+          <li><a href="mailto:hello@latitude15.coffee">hello@latitude15.coffee</a></li>
+          <li><a href="#visit">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© 2016–2025 Latitude 15° Coffee Roasters LLP · Goa, India</span>
+      <span>Roasted at 15.5937° N, 73.7625° E</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var root = document.documentElement;
+
+  /* ---------- 1. THEME TOGGLE, PERSISTED ---------- */
+  var themeBtn = document.getElementById('themeToggle');
+  var KEY = 'lat15-theme';
+  function applyTheme(t){
+    root.setAttribute('data-theme', t);
+    themeBtn.setAttribute('aria-pressed', String(t === 'dark'));
+    themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch(e){}
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(stored || (prefersDark ? 'dark' : 'light'));
+  themeBtn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem(KEY, next); } catch(e){}
+  });
+
+  /* ---------- 2. STICKY NAV STATE + SCROLLSPY ---------- */
+  var nav = document.getElementById('nav');
+  var links = Array.prototype.slice.call(document.querySelectorAll('#navLinks a'));
+  var targets = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  function onScroll(){
+    nav.classList.toggle('is-stuck', window.scrollY > 8);
+    var line = window.scrollY + 140, current = null;
+    targets.forEach(function(sec){ if (sec.offsetTop <= line) current = sec.id; });
+    links.forEach(function(a){
+      if (current && a.getAttribute('href') === '#' + current) a.setAttribute('aria-current','true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if (!ticking){ window.requestAnimationFrame(function(){ onScroll(); ticking = false; }); ticking = true; }
+  }, {passive:true});
+  onScroll();
+
+  /* ---------- 3. MOBILE MENU ---------- */
+  var burger = document.getElementById('burger');
+  var navLinks = document.getElementById('navLinks');
+  function closeMenu(){ navLinks.classList.remove('is-open'); burger.setAttribute('aria-expanded','false'); burger.setAttribute('aria-label','Open menu'); }
+  burger.addEventListener('click', function(){
+    var open = navLinks.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  navLinks.addEventListener('click', function(e){ if (e.target.tagName === 'A') closeMenu(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
+
+  /* ---------- 4. BILLING TOGGLE ---------- */
+  var mBtn = document.getElementById('billMonthly');
+  var aBtn = document.getElementById('billAnnual');
+  var thumb = document.getElementById('toggleThumb');
+  var pill = document.getElementById('savePill');
+  var amounts = document.querySelectorAll('.plan__amount');
+  var billed = document.querySelectorAll('.plan__billed');
+
+  function sizeThumb(active){
+    var w = active.offsetWidth;
+    thumb.style.width = w + 'px';
+    thumb.style.transform = 'translateX(' + (active.offsetLeft - mBtn.offsetLeft) + 'px)';
+  }
+  function setBilling(mode){
+    var annual = mode === 'annual';
+    mBtn.setAttribute('aria-pressed', String(!annual));
+    aBtn.setAttribute('aria-pressed', String(annual));
+    sizeThumb(annual ? aBtn : mBtn);
+    pill.textContent = annual ? 'You\u2019re saving 2 months on every plan' : 'Save 2 months on annual';
+    Array.prototype.forEach.call(amounts, function(el){
+      el.classList.add('is-swapping');
+      setTimeout(function(){
+        el.textContent = annual ? el.dataset.annual : el.dataset.monthly;
+        el.classList.remove('is-swapping');
+      }, 180);
+    });
+    Array.prototype.forEach.call(billed, function(el){
+      el.textContent = annual ? el.dataset.billedAnnual : el.dataset.billedMonthly;
+    });
+  }
+  mBtn.addEventListener('click', function(){ setBilling('monthly'); });
+  aBtn.addEventListener('click', function(){ setBilling('annual'); });
+  window.addEventListener('resize', function(){ sizeThumb(aBtn.getAttribute('aria-pressed') === 'true' ? aBtn : mBtn); });
+  sizeThumb(mBtn);
+
+  /* ---------- 5. BREW TABS (roving tabindex) ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  function selectTab(tab, focus){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){ selectTab(tab); });
+    tab.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (d){ e.preventDefault(); selectTab(tabs[(i + d + tabs.length) % tabs.length], true); }
+      if (e.key === 'Home'){ e.preventDefault(); selectTab(tabs[0], true); }
+      if (e.key === 'End'){ e.preventDefault(); selectTab(tabs[tabs.length - 1], true); }
+    });
+  });
+
+  /* ---------- 6. FAQ ACCORDION ---------- */
+  var accBtns = Array.prototype.slice.call(document.querySelectorAll('.acc__btn'));
+  function setOpen(btn, open){
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    btn.setAttribute('aria-expanded', String(open));
+    if (open){
+      panel.style.height = panel.firstElementChild.offsetHeight + 'px';
+    } else {
+      panel.style.height = panel.firstElementChild.offsetHeight + 'px';
+      panel.offsetHeight; /* reflow */
+      panel.style.height = '0px';
+    }
+  }
+  accBtns.forEach(function(btn){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    panel.style.height = open ? 'auto' : '0px';
+    btn.addEventListener('click', function(){
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      accBtns.forEach(function(other){ if (other !== btn && other.getAttribute('aria-expanded') === 'true') setOpen(other, false); });
+      setOpen(btn, !isOpen);
+    });
+  });
+  window.addEventListener('resize', function(){
+    accBtns.forEach(function(btn){
+      if (btn.getAttribute('aria-expanded') === 'true'){
+        var p = document.getElementById(btn.getAttribute('aria-controls'));
+        p.style.height = p.firstElementChild.offsetHeight + 'px';
+      }
+    });
+  });
+
+  /* ---------- 7. NEWSLETTER VALIDATION ---------- */
+  var form = document.getElementById('signupForm');
+  var msg = document.getElementById('formMsg');
+  var input = document.getElementById('email');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = input.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){
+      msg.textContent = 'That email doesn\u2019t look right \u2014 mind checking it?';
+      input.focus();
+      return;
+    }
+    msg.textContent = 'Done. Next harvest note lands in your inbox.';
+    form.reset();
+  });
+
+  /* ---------- 8. MARQUEE: duplicate for a seamless loop (clone hidden from AT) ---------- */
+  var track = document.getElementById('stripTrack');
+  var clone = document.createElement('div');
+  clone.style.display = 'contents';
+  clone.setAttribute('aria-hidden', 'true');
+  clone.innerHTML = track.innerHTML;
+  track.appendChild(clone);
+})();
+</script>
+</body>
+</html>
